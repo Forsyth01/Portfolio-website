@@ -3,28 +3,29 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaReact, FaNodeJs } from "react-icons/fa"; // Define image paths
 import posze from "@/assets/images/posze.png";
-import { peacehouse } from "@/assets/images";
+import { noteapp, peacehouse } from "@/assets/images";
 
 const ProjectPreview = () => {
   const items = [
     {
-      id: 1,
+           id: 1,
+           image: noteapp,
+           name: "Noteapp",
+           text: "I created a note app that allows users to easily create, update, and delete notes. By using Firebase as the backend, the app solves the problem of managing and storing notes efficiently",
+           icon: <FaReact size={50} />,
+           skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
+           link: "https://noteapp01.netlify.app/", 
+         },
+    {
+      id: 2,
       image: peacehouse,
       name: "Peace House University",
-      text: "I developed and designed the frontend website for an NFT Landing Page using React.js. I also leveraged Figma to create a modern and responsive user .",
+      text: "I designed the user interface and developed the landing page for Peace House University, leveraging my expertise in front-end development and modern tools like ReactJS and TailwindCSS.",
       icon: <FaReact size={50} />,
       skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
       link: "https://peacehouseuniversity.netlify.app/",
     },
-    {
-      id: 2,
-      image: posze,
-      name: "Posze",
-      text: "This is a description of Project Two. It talks yeas dw about the features and functionality of the project.",
-      icon: <FaNodeJs size={50} />,
-      skills: ["ReactJS", "TailwindCSS", "GSAP"],
-      link: "https://posze.netlify.app/",
-    },
+    
   ];
 
   return (

@@ -59,20 +59,31 @@ const About = () => {
             <div className="xl:col-span-2 lg:col-span-2 md:col-span-2">
               <div className="about-text">
                 <p className="my- borde border-gray-700">
-                  a Front-End Developer with over 2 years of experience building
-                  dynamic, user-friendly web applications. Skilled in React,
-                  TailwindCSS, and Firebase, I specialize in creating responsive
-                  designs and seamless user experiences.
+                  I’m a front-end developer with 3 years of experience building
+                  websites and apps that are easy to use, visually appealing,
+                  and solve real-world problems. I use React, HTML, CSS, and
+                  JavaScript to create clean, efficient code that delivers fast,
+                  responsive, and engaging digital experiences. I love turning
+                  ideas into reality and thrive on challenges like improving
+                  user engagement, optimizing performance, and making the web
+                  more accessible.
+                  <br />
+                  {/* <br />
+                  My degree in International Studies and Diplomacy has given me
+                  a unique ability to communicate effectively and collaborate
+                  seamlessly with diverse teams. This has helped me create user
+                  experiences that resonate across cultures and meet the needs
+                  of a global audience.
+                  <br /> */}
+                  <br />
+                  When I’m not coding, I’m probably learning new tools or
+                  exploring the latest tech trends, to stay ahead in the
+                  ever-evolving tech industry.
                   <br />
                   <br />
-                  With a background in International Relations, I bring a unique
-                  perspective to problem-solving and collaboration. I’m
-                  passionate about clean code, thoughtful design, and
-                  continuously learning new tools to stay ahead in the
-                  ever-evolving tech world.
-                  <br />
-                  <br />
-                  <p>Let’s connect and create something amazing together!</p>
+                  <p> Let’s work
+                  together to create digital experiences that not only look
+                  great but also deliver results!</p>
                 </p>
                 <div className="my-4 resume-btn">
                   <Resumebtn />

@@ -20,9 +20,11 @@ const App = () => {
       {/* <Sidenav/> */}
       {/* <Side/> */}
       <CustomCursor />
-      <Nav />
       <Navbar/>
       <AnimatePresence mode="sync">
+      <PageTransition>
+      <Nav />
+      </PageTransition>
         <ScrollToTop />
         <Routes location={location} key={location.pathname}>
           <Route

@@ -29,18 +29,30 @@ const Home = () => {
               </div>
             </div>
             <div className="">
-              <h1 className="heading sm:text-[45px] text-[32px] mb-4 font-bold xl:leading-tight leading-tight tracking-tight">
-                Building Exceptional <br className="sm:hidden" />
-                User Experiences
+              <h1 className="heading sm:text-[45px] text-[28px] mb-4 font-bold xl:leading-tight leading-tight tracking-tight">
+                {/* Building Exceptional <br className="sm:hidden" />
+                User Experiences */}
+                Designing Next-Level Digital Experiences
               </h1>
             </div>
             <div className="">
+              {/* <p className="">
+              &quot;I’m a front-end developer with 3 years of experience building responsive, user-friendly websites and
+              web applications with clean, efficient code.   Hi! I'm Forsyth, a Frontend Developer based in Nigeria. I
+                specialize in transforming design into functional,
+                high-performing web applications. Let's discuss your next
+                project.
+              </p> */}
               <p className="">
+                Hi! I'm Forsyth, a Frontend Developer with 3 years of experience building responsive, user-friendly websites and
+                web applications with clean, efficient code.
+              </p>
+              {/* <p className="">
                 Hi! I'm Forsyth, a Frontend Developer based in Nigeria. I
                 specialize in transforming design into functional,
                 high-performing web applications. Let's discuss your next
                 project.
-              </p>
+              </p> */}
             </div>
             <div className="flex gap-3 justify-center lg:justify-start ">
               <Resumebtn />

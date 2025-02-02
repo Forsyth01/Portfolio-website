@@ -5,20 +5,18 @@ const experiences = [
     company: "BinaryBlock",
     location: "remote",
     role: "Frontend Developer",
-    period: "June 2019 - Jan 2025",
+    period: "June 2023 - May 2024",
     description: [
-      "This is a paragraph with text that wraps to the next line. The bullet stands alone, and the text stays aligned.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque error deleniti a labore sint aperiam neque mollitia, placeat repudiandae, nesciunt unde veniam, at aliquid. Quia hic voluptates dolor aliquid quidem.",
-      "This is a paragraph with text that wraps to the next line. The bullet stands alone, and the text stays aligned.",
+      "As a front-end developer at BinaryBlock, I designed and implemented user interfaces, ensuring responsive and visually appealing designs. I collaborated with the team to develop seamless user experiences using ReactJS and TailwindCSS, focusing on delivering high-quality, efficient, and interactive web applications.",
     ],
   },
   {
-    company: "Cardplot",
+    company: "Peace House University",
     location: "remote",
     role: "Frontend Developer",
-    period: "June 2019 - Jan 2025",
+    period: "June 2023 - Jan 2024",
     description: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque error deleniti a labore sint aperiam neque mollitia, placeat repudiandae, nesciunt unde veniam, at aliquid. Quia hic voluptates dolor aliquid quidem.",
+      "At Peace House University, I focused on mastering key technical and design skills, combining my passion for technology and creativity. I engaged in hands-on projects, strengthened my expertise in front-end development with ReactJS and TailwindCSS, and explored modern tools like GSAP and Framer Motion for animations. ",
     ],
   },
 ];
