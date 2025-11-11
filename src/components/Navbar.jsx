@@ -47,10 +47,10 @@ const Navbar = () => {
     <div className="absolute w-full z-50 lg:hidden">
       <div className="hidden lg:flex fixed w-full bottom-8 z-50 ">
         <div className="w-[70%] xl:w-[60%] bg-[#1d1d1d] m-auto py-2 px-4 border rounded-full shadow-lg flex justify-between items-center">
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <img src={profilepic2} alt="Profile" className="h-[40px] w-[40px] rounded-full border-2 border-gray-500" />
             <Link to="/" className="ml-4 text-white text-xl font-bold"><h1 className="logo text-gray-300">FORSYTH</h1></Link>
-          </div>
+          </div> */}
           <ul className="flex gap-5 items-center">{renderNavLinks()}</ul>
         </div>
       </div>

@@ -33,7 +33,7 @@ const ProjectItem = ({ item, index }) => {
   };
 
   return (
-    <div ref={ref} className="relative min-h-[400px] lg:min-h-[500px] w-[95%] m-auto">
+    <div ref={ref} className="relative min-h-[400px] lg:min-h-[500px] w-[90%] m-auto">
       {/* Sticky Project Number - Background Element */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div
