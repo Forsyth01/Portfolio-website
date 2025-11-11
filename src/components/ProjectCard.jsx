@@ -1,57 +1,26 @@
-import { motion } from "framer-motion"; // Correct import
-import React from "react";
+import projectsData from "@/data/myProjects";
+import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
-import { FaReact, FaNodeJs } from "react-icons/fa"; // Define image paths
-import posze from "@/assets/images/posze.png";
-import { noteapp, peacehouse } from "@/assets/images";
 
 const ProjectCard = () => {
-  const items = [
-    {
-      id: 1,
-      image: peacehouse,
-      name: "Peace House University",
-      text: "I designed the user interface and developed the landing page for Peace House University, leveraging my expertise in front-end development and modern tools like ReactJS and TailwindCSS.",
-      icon: <FaReact size={50} />,
-      skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
-      link: "https://peacehouseuniversity.netlify.app/",
-    },
-    {
-      id: 2,
-      image: posze,
-      name: "Posze",
-      text: "I developed the landing page for Posze, a fashion website, focusing on sleek, modern aesthetics and an engaging user interface. Leveraging ReactJS and TailwindCSS, I ensured the design was visually appealing, responsive, and aligned with the brand's style.",
-      icon: <FaNodeJs size={50} />,
-      skills: ["ReactJS", "TailwindCSS", "GSAP"],
-      link: "https://posze.netlify.app/",
-    },
-    {
-        id: 3,
-        image: noteapp,
-        name: "Noteapp",
-        text: "I created a note app that allows users to easily create, update, and delete notes. By using Firebase as the backend, the app solves the problem of managing and storing notes efficiently",
-        icon: <FaReact size={50} />,
-        skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
-        link: "https://noteapp01.netlify.app/", 
-      }
-  ];
-
   return (
     <div className="space-y-10 pb-10">
-      {/* Cards */}
-      {items.map((item) => (
+      {projectsData.map((item) => (
         <div
           key={item.id}
           className="xl:flex items-center border xl:border-non border-gray-700 bg-[#1e1e1eb8] rounded-xl pt-10"
         >
-          <div className="w-full space-y-4 sm:px-10 px-2 ">
-            <h1 className="xl:text-3xl sm:text-2xl text-xl font-semibold leading-tight tracking-tighter">{item.name}</h1>
+          <div className="w-full space-y-4 sm:px-10 px-2">
+            <h1 className="xl:text-3xl sm:text-2xl text-xl font-semibold leading-tight tracking-tighter">
+              {item.name}
+            </h1>
             <p className="text-sm">{item.text}</p>
+
             <div>
-              <h1 className="text-[#fec212 text-[12px] font-medium pb-2">
+              <h1 className="text-[#fec212] text-[12px] font-medium pb-2">
                 Built with:
               </h1>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 {item.skills.map((skill, index) => (
                   <p
                     key={index}
@@ -62,6 +31,7 @@ const ProjectCard = () => {
                 ))}
               </div>
             </div>
+
             <a
               href={item.link}
               target="_blank"
@@ -72,6 +42,7 @@ const ProjectCard = () => {
               <span className="text-sm">Visit Website</span>
             </a>
           </div>
+
           <div className="flex flex-col justify-end w-full">
             <motion.img
               src={item.image}

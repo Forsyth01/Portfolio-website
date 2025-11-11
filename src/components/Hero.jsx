@@ -1,0 +1,284 @@
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Resumebtn from "./button/Resumebtn";
+import Githubtn from "./button/Githubtn";
+import {
+  FiCircle,
+  FiMenu,
+  FiX,
+  FiHome,
+  FiUser,
+  FiCode,
+  FiBriefcase,
+  FiMail,
+} from "react-icons/fi";
+import { vectorp } from "@/assets/images";
+
+const Hero = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", icon: FiHome, href: "#home" },
+    { name: "About", icon: FiUser, href: "#about" },
+    { name: "Skills", icon: FiCode, href: "#skills" },
+    { name: "Projects", icon: FiBriefcase, href: "#projects" },
+    { name: "Contact", icon: FiMail, href: "#contact" },
+  ];
+
+  return (
+    <div className="relative min-h-screen sm:min-h-screen lg:min-h-[75vh] xl:min-h-[70vh]">
+      {/* Simple, reliable gradient background */}
+      <div className="">
+        <div className="fixed inset-0 ">
+          {/* Right gradient */}
+          <div
+            className="absolute top-0 right-0 w-[800px] h-full opacity-55 z-100"
+            style={{
+              background:
+                "radial-gradient(circle at center right, rgba(34, 197, 94, 0.15) 0%, transparent 70%)",
+            }}
+          ></div>
+
+          {/* Left gradient */}
+          <div
+            className="absolute top-0 left-0 w-[800px] h-full opacity-55 z-100"
+            style={{
+              background:
+                "radial-gradient(circle at center left, rgba(16, 185, 129, 0.15) 0%, transparent 70%)",
+            }}
+          ></div>
+
+          {/* Center subtle glow */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-50"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)",
+            }}
+          ></div>
+        </div>
+        {/* Center subtle glow */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-100"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)",
+          }}
+        ></div>
+      </div>
+
+      <div className="xl:w-[60%] sm:w-[70%] w-full max-w-screen-lg mx-auto px-6 flex flex-col h-[95vh] sm:py-10 lg:py-0 sm:h-full lg:h-[75vh] justify-center">
+        <motion.div
+          className="space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Mobile vector & availability */}
+          <div className="hidden pb-4">
+            <motion.div
+              className="flex flex-col justify-center mb-6"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative inline-block mx-auto">
+                <div className="absolute -inset-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full blur-xl"></div>
+                <img
+                  src={vectorp}
+                  alt="Profile"
+                  className="relative h-[190px] w-[200px] object-cover"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="inline-flex gap-2 items-center bg-slate-900/50 backdrop-blur-sm border border-green-500/20 w-fit mx-auto py-2.5 px-5 rounded-full"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <FiCircle className="text-green-500 text-[8px] fill-green-500" />
+              <span className="text-sm text-slate-300 font-normal">
+                Available for opportunities
+              </span>
+            </motion.div>
+          </div>
+
+          {/* Desktop Menu Icon - top right */}
+          <div className="hidden lg:block fixed z-10 top-8 right-8">
+            <motion.button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="relative z-50 p-3 bg-slate-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl hover:bg-slate-900/70 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <motion.div
+                animate={{ rotate: isMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {isMenuOpen ? (
+                  <FiX className="text-green-500 text-2xl" />
+                ) : (
+                  <FiMenu className="text-green-500 text-2xl" />
+                )}
+              </motion.div>
+            </motion.button>
+
+            {/* Animated Menu Box */}
+            <AnimatePresence>
+              {isMenuOpen && (
+                <>
+                  {/* Backdrop */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+                  />
+
+                  {/* Menu Box */}
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      scale: 0,
+                      x: 0,
+                      y: -20,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      x: 0,
+                      y: 0,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0,
+                      x: 0,
+                      y: -20,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 25,
+                    }}
+                    className="absolute top-16 right-0 w-64 bg-[#1a1a1a] backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-2xl z-50 overflow-hidden"
+                    style={{
+                      transformOrigin: "top right",
+                    }}
+                  >
+                    {/* Menu Header */}
+                    <div className="p-4 border-b border-green-500/20">
+                      <h3 className="text-white text-lg font-normal">
+                        Navigation
+                      </h3>
+                      <p className="text-slate-400 text-xs mt-1">
+                        Explore my portfolio
+                      </p>
+                    </div>
+
+                    {/* Navigation Links */}
+                    <div className="p-2">
+                      {navLinks.map((link, index) => (
+                        <motion.a
+                          key={link.name}
+                          href={link.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          whileHover={{
+                            x: 4,
+                            backgroundColor: "rgba(34, 197, 94, 0.1)",
+                          }}
+                          className="flex items-center gap-3 p-3 rounded-xl text-slate-300 hover:text-white transition-colors group"
+                        >
+                          <link.icon className="text-green-500 text-lg group-hover:scale-110 transition-transform" />
+                          <span className="font-normal">{link.name}</span>
+                        </motion.a>
+                      ))}
+                    </div>
+
+                    {/* Menu Footer */}
+                    <div className="p-4 border-t border-green-500/20 bg-[#1f1d1d]">
+                      <div className="flex items-center gap-2">
+                        <FiCircle className="text-green-500 text-[8px] fill-green-500 animate-pulse" />
+                        <span className="text-xs text-slate-400">
+                          Available for work
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Heading with gradient */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-center lg:text-left"
+          >
+            <p className="text-slate-400 text-sm uppercase tracking-wider mb-3">
+              Web Developer
+            </p>
+            <h1 className="text-[32px] sm:text-[52px] xl:text-[64px] font-normal mb-4 leading-[1.1] tracking-tight">
+              Hi, I'm{" "}
+              <span className="inline-block relative">
+                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">
+                  Forsyth
+                </span>
+                <motion.div
+                  className="absolute -bottom-2 left-0 w-full h-[3px] bg-gradient-to-r from-green-500 to-emerald-500"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                />
+              </span>
+            </h1>
+          </motion.div>
+
+          {/* Description with better spacing */}
+          <motion.div
+            className="space-y-4 max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+              I specialize in{" "}
+              <span className="text-white font-normal">React, Next.js</span>,
+              and modern web technologies. I build responsive, high-performance
+              websites and web apps that are intuitive, scalable, and
+              user-friendly.
+            </p>
+            <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+              Passionate about clean code, smooth UI/UX, and leveraging{" "}
+              <span className="text-slate-300">AI & Web3 tools</span> to deliver
+              modern solutions that drive impact.
+            </p>
+          </motion.div>
+
+          {/* Buttons with enhanced styling */}
+          <motion.div
+            className="flex gap-4 justify-center lg:justify-start pt-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Resumebtn />
+            <Githubtn />
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

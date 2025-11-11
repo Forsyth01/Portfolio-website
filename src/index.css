@@ -2,62 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-body,li{
-  font-family: "Raleway", serif;
+body,
+li {
+  /* font-family: "Raleway", serif; */
+  font-family: "DM Sans", sans-serif;
 }
 
 
-li{
+li {
   color: gainsboro
 }
-.body1{
 
-    /* background-color: black; */
-    color: white;
-    box-sizing: border-box;
-    /* background-color: black; */
-    background: linear-gradient(135deg, #0b0d0e, #1a1a1d, #242526);
-overflow: hidden;
+.body1 {
+
+  /* background-color: black; */
+  color: white;
+  box-sizing: border-box;
+  /* background-color: black; */
+  background: linear-gradient(135deg, #0b0d0e, #1a1a1d, #242526);
+  /* overflow: hidden; */
 }
 
 .body1 {
   /* background: linear-gradient(135deg, #0b0d0e, #1a1a1d, #242526); */
   /* color: #fff; Optional: to ensure good text contrast */
   color: #ebebeb;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   margin: 0;
-  font-family: 'Arial', sans-serif; /* Adjust font to your style */
+  font-family: "DM Sans", sans-serif;
 }
 
 
-h1{
-    /* font-family: "Raleway", serif; */
-      /* font-family: "Inter", serif; */
-      font-family: "Poppins", serif;
+h1 {
+  /* font-family: "Raleway", serif; */
+  /* font-family: "Inter", serif; */
+  /* font-family: "Poppins", serif; */
+  font-family: "DM Sans", sans-serif;
 }
+
 .sidebar-hidden {
   opacity: 0;
   transform: translateY(-200%);
 }
 
-  p{
-    /* font-family: "Inter", serif; */
-    font-family: "Raleway", serif;
-  
-    /* font-family: 'Amulya', sans-serif; */
-    font-weight: normal;
-    /* font-family: 'Chillax', sans-serif; */
-    font-size: 15px;
-    color: gainsboro
-  }
-  
-  
-  @layer base {
+p {
+  /* font-family: "Inter", serif; */
+  font-family: "Raleway", serif;
+
+  /* font-family: 'Amulya', sans-serif; */
+  font-weight: normal;
+  /* font-family: 'Chillax', sans-serif; */
+  font-size: 15px;
+  color: gainsboro
+}
+
+
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -85,6 +90,7 @@ h1{
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -112,10 +118,12 @@ h1{
     --chart-5: 340 75% 55%;
   }
 }
-  @layer base {
+
+@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -128,8 +136,9 @@ h1{
   height: 20px;
   background-color: #fec212;
   border-radius: 50%;
-  pointer-events: none; /* So it doesn't block interactions */
+  pointer-events: none;
+  /* So it doesn't block interactions */
   transition: transform 0.1s ease;
   overflow: hidden;
-  z-index: 99999; 
+  z-index: 99999;
 }

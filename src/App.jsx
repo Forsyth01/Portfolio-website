@@ -16,14 +16,14 @@ const App = () => {
   const location = useLocation();
   return (
     <div className="body1 ">
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <Sidenav/> */}
       {/* <Side/> */}
-      <CustomCursor />
-      <Navbar/>
+      {/* <CustomCursor /> */}
+      {/* <Navbar/> */}
       <AnimatePresence mode="sync">
       <PageTransition>
-      <Nav />
+      {/* <Nav /> */}
       </PageTransition>
         <ScrollToTop />
         <Routes location={location} key={location.pathname}>
@@ -44,7 +44,7 @@ const App = () => {
             }
           />
           <Route
-            path="/project"
+            path="/projects"
             element={
               <PageTransition>
                 <Project />
@@ -53,7 +53,7 @@ const App = () => {
           />
         </Routes>
       </AnimatePresence>
-      <div className="sm:pt-[100px]">
+      <div className="">
         <Footer />
       </div>
       {/* <Navbar /> */}

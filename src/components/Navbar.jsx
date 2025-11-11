@@ -44,8 +44,8 @@ const Navbar = () => {
     ));
 
   return (
-    <div>
-      <div className="hidden sm:flex fixed w-full bottom-8 z-50">
+    <div className="absolute w-full z-50 lg:hidden">
+      <div className="hidden lg:flex fixed w-full bottom-8 z-50 ">
         <div className="w-[70%] xl:w-[60%] bg-[#1d1d1d] m-auto py-2 px-4 border rounded-full shadow-lg flex justify-between items-center">
           <div className="flex items-center">
             <img src={profilepic2} alt="Profile" className="h-[40px] w-[40px] rounded-full border-2 border-gray-500" />
@@ -54,7 +54,7 @@ const Navbar = () => {
           <ul className="flex gap-5 items-center">{renderNavLinks()}</ul>
         </div>
       </div>
-      <div className="flex sm:hidden my-6">
+      <div className="flex lg:hidden py-6">
         <div className="w-[90%] m-auto flex justify-between items-center">
           <Link to="/"><img src={profilepic2} alt="Profile" className="h-[40px] w-[40px] rounded-full border-2 border-gray-500" /></Link>
           <TbMenuDeep className="text-4xl cursor-pointer" onClick={() => setSidebarVisible(!sidebarVisible)} />
