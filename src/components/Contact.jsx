@@ -29,7 +29,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="text-center space-y-4">
-            <h2 className="xl:text-5xl text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
+            <h2 className="xl:text-5xl tracking-tighter lg:tracking-tight text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
               Let's Build <br className=""/> Something Amazing
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">

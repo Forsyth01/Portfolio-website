@@ -1,21 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import Resumebtn from "./button/Resumebtn";
 import Githubtn from "./button/Githubtn";
-import {
-  FiCircle,
-  FiMenu,
-  FiX,
-  FiHome,
-  FiUser,
-  FiCode,
-  FiBriefcase,
-  FiMail,
-  FiGithub,
-  FiLinkedin,
-} from "react-icons/fi";
-import { vectorp } from "@/assets/images";
-import profilePic from "@/assets/images/profilepic2.jpg";
+import NavigationMenu from "./NavigationMenu";
 
 // Particle Background Component
 const ParticleBackground = () => {
@@ -123,18 +110,8 @@ const ParticleBackground = () => {
 };
 
 const Hero = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navLinks = [
-    { name: "Home", icon: FiHome, href: "#home" },
-    { name: "About", icon: FiUser, href: "/about" },
-    { name: "Skills", icon: FiCode, href: "#skills" },
-    { name: "Projects", icon: FiBriefcase, href: "#projects" },
-    { name: "Contact", icon: FiMail, href: "#contact" },
-  ];
-
   return (
-    <div id="home" className="relative min-h-screen sm:min-h-screen lg:min-h-[75vh] xl:min-h-[70vh] overflow-hidden ">
+    <div id="home" className="relative min-h-screen sm:min-h-screen lg:min-h-[80vh] xl:min-h-[75vh] overflow-hidden ">
       {/* Particle Background - spans entire page */}
       <ParticleBackground />
       
@@ -178,176 +155,15 @@ const Hero = () => {
         ></div>
       </div>
 
-      <div className="xl:w-[60%] sm:w-[70%] w-full max-w-screen-lg mx-auto px-6 flex flex-col h-[95vh] sm:py-10 lg:py-0 sm:h-full lg:h-[75vh] justify-center">
+      {/* Navigation Menu Component */}
+      <NavigationMenu />
+
+      <div className="xl:w-[60%] sm:w-[70%] w-full max-w-screen-lg mx-auto px-6 flex flex-col h-[95vh] sm:py-10 lg:py-0 sm:h-full lg:h-[90vh] xl:h-[75vh] justify-center">
         <motion.div
           className="space-y-8"
-          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Menu Icon - top right (now works on mobile too) */}
-          <div className="fixed z-10 top-6 right-6 sm:top-8 sm:right-8">
-            <motion.button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative z-50 p-3 bg-slate-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl hover:bg-slate-900/70 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <motion.div
-                animate={{ rotate: isMenuOpen ? 90 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {isMenuOpen ? (
-                  <FiX className="text-green-500 text-2xl" />
-                ) : (
-                  <FiMenu className="text-green-500 text-2xl" />
-                )}
-              </motion.div>
-            </motion.button>
-
-            {/* Animated Menu Box */}
-            <AnimatePresence>
-              {isMenuOpen && (
-                <>
-                  {/* Backdrop */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-                  />
-
-                  {/* Menu Box */}
-                  <motion.div
-                    initial={{
-                      opacity: 0,
-                      scale: 0,
-                      x: 0,
-                      y: -20,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      scale: 1,
-                      x: 0,
-                      y: 0,
-                    }}
-                    exit={{
-                      opacity: 0,
-                      scale: 0,
-                      x: 0,
-                      y: -20,
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 25,
-                    }}
-                    className="absolute top-16 right-0 w-64 bg-[#1a1a1a] backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-2xl z-50 overflow-hidden"
-                    style={{
-                      transformOrigin: "top right",
-                    }}
-                  >
-                    {/* Menu Header */}
-                    <div className="p-4 border-b border-green-500/20">
-                      {/* Profile Picture */}
-                      <div className="flex items-center gap-3 mb-3">
-                        <img
-                          src={profilePic}
-                          alt="Profile"
-                          className="w-12 h-12 rounded-full object-cover border-2 border-green-500/30"
-                        />
-                        <div>
-                          <h3 className="text-white text-lg font-normal">
-                            Navigation
-                          </h3>
-                          <p className="text-slate-400 text-xs">
-                            Explore my portfolio
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Navigation Links */}
-                    <div className="p-2">
-                      {navLinks.map((link, index) => (
-                        <motion.a
-                          key={link.name}
-                          href={link.href}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setIsMenuOpen(false);
-                            // Wait for menu to close, then scroll
-                            setTimeout(() => {
-                              const element = document.querySelector(link.href);
-                              if (element) {
-                                element.scrollIntoView({ 
-                                  behavior: 'smooth',
-                                  block: 'start'
-                                });
-                              }
-                            }, 300);
-                          }}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.1 }}
-                          whileHover={{
-                            x: 4,
-                            backgroundColor: "rgba(34, 197, 94, 0.1)",
-                          }}
-                          className="flex items-center gap-3 p-3 rounded-xl text-slate-300 hover:text-white transition-colors group"
-                        >
-                          <link.icon className="text-green-500 text-lg group-hover:scale-110 transition-transform" />
-                          <span className="font-normal">{link.name}</span>
-                        </motion.a>
-                      ))}
-                    </div>
-
-                    {/* Menu Footer */}
-                    <div className="p-4 border-t border-green-500/20 bg-[#1f1d1d]">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <FiCircle className="text-green-500 text-[8px] fill-green-500 animate-pulse" />
-                          <span className="text-xs text-slate-400">
-                            Available for work
-                          </span>
-                        </div>
-                      </div>
-                      {/* Social Icons */}
-                      <div className="flex items-center gap-3 mt-3 pt-3 border-t border-green-500/10">
-                        <a
-                          href="https://linkedin.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-slate-400 hover:text-green-500 transition-colors"
-                        >
-                          <FiLinkedin className="text-lg" />
-                        </a>
-                        <a
-                          href="https://github.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-slate-400 hover:text-green-500 transition-colors"
-                        >
-                          <FiGithub className="text-lg" />
-                        </a>
-                        <a
-                          href="mailto:your@email.com"
-                          className="text-slate-400 hover:text-green-500 transition-colors"
-                        >
-                          <FiMail className="text-lg" />
-                        </a>
-                      </div>
-                    </div>
-                  </motion.div>
-                </>
-              )}
-            </AnimatePresence>
-          </div>
-
           {/* Heading with gradient */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -355,7 +171,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-center lg:text-left"
           >
-            <p className="text-slate-400 text-sm uppercase tracking-wider mb-3">
+            <p className="text-slate-400 text-sm uppercase tracking-wider mb-3 xl:pt-20">
               Web Developer
             </p>
             <h1 className="text-[32px] sm:text-[52px] xl:text-[64px] font-normal mb-4 leading-[1.1] tracking-tight">

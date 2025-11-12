@@ -21,7 +21,7 @@ const Footer = () => {
               {/* Your Name */}
             </h3>
             <p className="text-gray-400 text-sm mt-1">
-              Frontend Developer & Designer
+              Web Developer & Designer
             </p>
           </div>
 
