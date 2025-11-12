@@ -11,8 +11,11 @@ import {
   FiCode,
   FiBriefcase,
   FiMail,
+  FiGithub,
+  FiLinkedin,
 } from "react-icons/fi";
 import { vectorp } from "@/assets/images";
+import profilePic from "@/assets/images/profilepic2.jpg";
 
 const Hero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,8 +77,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Desktop Menu Icon - top right */}
-          <div className="hidden lg:block fixed z-10 top-8 right-8">
+          {/* Menu Icon - top right (now works on mobile too) */}
+          <div className="fixed z-10 top-6 right-6 sm:top-8 sm:right-8">
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="relative z-50 p-3 bg-slate-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl hover:bg-slate-900/70 transition-colors"
@@ -142,12 +145,22 @@ const Hero = () => {
                   >
                     {/* Menu Header */}
                     <div className="p-4 border-b border-green-500/20">
-                      <h3 className="text-white text-lg font-normal">
-                        Navigation
-                      </h3>
-                      <p className="text-slate-400 text-xs mt-1">
-                        Explore my portfolio
-                      </p>
+                      {/* Profile Picture */}
+                      <div className="flex items-center gap-3 mb-3">
+                        <img 
+                          src={profilePic} 
+                          alt="Profile" 
+                          className="w-12 h-12 rounded-full object-cover border-2 border-green-500/30"
+                        />
+                        <div>
+                          <h3 className="text-white text-lg font-normal">
+                            Navigation
+                          </h3>
+                          <p className="text-slate-400 text-xs">
+                            Explore my portfolio
+                          </p>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Navigation Links */}
@@ -174,11 +187,38 @@ const Hero = () => {
 
                     {/* Menu Footer */}
                     <div className="p-4 border-t border-green-500/20 bg-[#1f1d1d]">
-                      <div className="flex items-center gap-2">
-                        <FiCircle className="text-green-500 text-[8px] fill-green-500 animate-pulse" />
-                        <span className="text-xs text-slate-400">
-                          Available for work
-                        </span>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <FiCircle className="text-green-500 text-[8px] fill-green-500 animate-pulse" />
+                          <span className="text-xs text-slate-400">
+                            Available for work
+                          </span>
+                        </div>
+                      </div>
+                      {/* Social Icons */}
+                      <div className="flex items-center gap-3 mt-3 pt-3 border-t border-green-500/10">
+                        <a 
+                          href="https://linkedin.com" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-slate-400 hover:text-green-500 transition-colors"
+                        >
+                          <FiLinkedin className="text-lg" />
+                        </a>
+                        <a 
+                          href="https://github.com" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-slate-400 hover:text-green-500 transition-colors"
+                        >
+                          <FiGithub className="text-lg" />
+                        </a>
+                        <a 
+                          href="mailto:your@email.com"
+                          className="text-slate-400 hover:text-green-500 transition-colors"
+                        >
+                          <FiMail className="text-lg" />
+                        </a>
                       </div>
                     </div>
                   </motion.div>
