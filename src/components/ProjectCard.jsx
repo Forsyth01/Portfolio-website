@@ -1,5 +1,4 @@
 import projectsData from "@/data/myProjects";
-import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const ProjectCard = () => {
@@ -38,7 +37,7 @@ const ProjectCard = () => {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex gap-2 w-fit mx-auto xl:mx-0 hover:scale-105 transition-all items-center px-4 py-2 text-[#1d1d1d] bg-white rounded-md sm:rounded-full"
+              className="flex gap-2 w-fit mx-auto xl:mx-0 items-center px-4 py-2 text-[#1d1d1d] bg-white rounded-md sm:rounded-full hover:opacity-90 transition-opacity"
             >
               <FiArrowUpRight />
               <span className="text-sm">Visit Website</span>
@@ -47,12 +46,10 @@ const ProjectCard = () => {
 
           {/* Right Section (Image) */}
           <div className="w-full">
-            <motion.img
+            <img
               src={item.image}
               alt={item.name}
               className="w-full h-[220px] sm:h-[300px] xl:h-[350px] object-cover rounded-b-xl xl:rounded-none xl:rounded-r-xl"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
             />
           </div>
         </div>
