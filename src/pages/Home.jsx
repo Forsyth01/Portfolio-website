@@ -23,7 +23,7 @@ const Home = () => {
       {/* <SectionDivider /> */}
       {/* <Skills /> */}
       {/* <SectionDivider /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
       {/* <Footer/> */}
     </div>

@@ -24,11 +24,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              
-              {/* Floating particles effect */}
-              <div className="absolute top-0 left-0 w-3 h-3 bg-green-400 rounded-full animate-ping opacity-75"></div>
-              <div className="absolute bottom-0 right-0 w-2 h-2 bg-emerald-400 rounded-full animate-ping opacity-75" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 right-0 w-2.5 h-2.5 bg-teal-400 rounded-full animate-ping opacity-75" style={{ animationDelay: '0.5s' }}></div>
+           
             </div>
           </div>
           <div className="text-center space-y-4">
