@@ -11,6 +11,7 @@ body,
 li {
   /* font-family: "Raleway", serif; */
   font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 
