@@ -33,8 +33,7 @@ const Contact = () => {
               Let's Build <br className=""/> Something Amazing
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
-              Got an exciting project? Looking for a dedicated developer? Or simply want to 
-              discuss the future of web development over coffee? 
+              Got an exciting project? Looking for a dedicated developer? Let’s team up and make it happen.
             </p>
             <p className="text-slate-400 text-base leading-relaxed max-w-xl mx-auto">
               I'm always open to new opportunities, collaborations, and conversations. 
