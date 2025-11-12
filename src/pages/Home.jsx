@@ -10,6 +10,7 @@ import { FiCircle } from "react-icons/fi";
 import { vectorp } from "@/assets/images";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       {/* <SectionDivider /> */}
       {/* <Skills /> */}
       {/* <SectionDivider /> */}
+      <Testimonials />
       <Contact />
       {/* <Footer/> */}
     </div>
