@@ -43,7 +43,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 relative">
           {techStack.map((tech, index) => (
             <motion.div
               key={tech.id}
@@ -54,8 +54,8 @@ const Skills = () => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="flex flex-col items-center gap-2">
-                <div className="text-4xl transition-transform group-hover:scale-110">
+              <div className="flex flex-col items-center gap-2 cursor-pointer">
+                <div className="text-4xl transition-transform group-hover:scale-110 ">
                   {tech.icon}
                 </div>
                 <span className="text-xs text-slate-400 group-hover:text-white transition-colors">

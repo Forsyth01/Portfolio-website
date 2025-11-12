@@ -1,13 +1,8 @@
 import { FaReact, FaNodeJs } from "react-icons/fa";
 
 // Import images directly inside this file
-import profilepic2 from "@/assets/images/profilepic2.jpg";
-import binaryblock from "@/assets/images/binaryblock.png";
 import posze from "@/assets/images/posze.png";
-import nftpalace from "@/assets/images/nftpalace.png";
 import noteapp from "@/assets/images/noteapp.png";
-import vpay from "@/assets/images/vpay.png";
-import vectorp from "@/assets/images/vectorp.png";
 import peacehouse from "@/assets/images/peacehouse.png";
 import htxcityrentals from "@/assets/images/htxcityrentals.png";
 import bukkaisland from "@/assets/images/bukkaisland.png";
@@ -19,9 +14,9 @@ const projectsData = [
     id: 1,
     image: bukkaisland,
     name: "Bukka Island",
-    text: "I designed and developed a modern event rental website for Bukkai Island, a business specializing in event equipment and furniture rentals. The platform allows customers to seamlessly browse rental items, add them to a cart, and request a personalized quote.",
+    text: "A full-featured web platform for a Houston-based food truck restaurant. The site includes an interactive menu, about page, and a secure admin dashboard for managing content with full CRUD functionality and authentication—designed for speed, scalability, and a seamless user experience",
     icon: <FaReact size={50} />,
-    skills: ["ReactJS", "TailwindCSS", "Firebase", "Cloudinary"],
+    skills: ["Nextjs", "TailwindCSS", "Firebase", "Framer-motion", "Cloudinary"],
     link: "https://www.bukkaisland.com/",
   },
   {
@@ -30,8 +25,26 @@ const projectsData = [
     name: "Htxcityrentals",
     text: "I designed and developed a modern event rental website for HtxCityRentals, a business specializing in event equipment and furniture rentals. The platform allows customers to seamlessly browse rental items, add them to a cart, and request a personalized quote.",
     icon: <FaReact size={50} />,
-    skills: ["ReactJS", "TailwindCSS", "Framer Motion", "NodeJS"],
+    skills: ["ReactJS", "TailwindCSS", "Framer Motion", "Emailjs", "Firebase"],
     link: "http://htxcityrentals.com/",
+  },
+    {
+    id: 6,
+    image: emgee,
+    name: "Design Portfolio",
+    text: "Developed a sleek and responsive portfolio website for a professional designer, featuring smooth UI animations, modern aesthetics, and an intuitive layout that highlights their creative work effectively across all devices.",
+    icon: <FaReact size={50} />,
+    skills: ["Nextjs", "TailwindCSS", "Framer Motion"],
+    link: "https://seniordesigner.vercel.app/",
+  },
+    {
+    id: 7,
+    image: astellar,
+    name: "Astellar Homes & Decor",
+    text: "Built a responsive blog website for Astellar Homes & Decor, featuring an admin dashboard for content management and a clean, modern interface that showcases interior design projects, services, and articles seamlessly.",
+    icon: <FaReact size={50} />,
+    skills: ["Nextjs", "Firebase", "Cloudinary", "TailwindCSS", "Framer Motion"],
+    link: "https://astellarhomesdecor.vercel.app/",
   },
   {
     id: 3,
@@ -60,24 +73,8 @@ const projectsData = [
     skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
     link: "https://noteapp01.netlify.app/",
   },
-  {
-    id: 6,
-    image: emgee,
-    name: "Design Portfolio",
-    text: "I created a professional design portfolio showcasing my graphic design works with smooth UI animations and responsive layout.",
-    icon: <FaReact size={50} />,
-    skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
-    link: "https://seniordesigner.vercel.app/",
-  },
-  {
-    id: 7,
-    image: astellar,
-    name: "Astellar Homes & Decor",
-    text: "I built a responsive website for Astellar Homes & Decor showcasing interior design projects, enabling visitors to explore services and contact easily.",
-    icon: <FaReact size={50} />,
-    skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
-    link: "https://astellarhomesdecor.vercel.app/",
-  },
+
+
 ];
 
 export default projectsData;

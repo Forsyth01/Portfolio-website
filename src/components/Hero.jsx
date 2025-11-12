@@ -111,7 +111,7 @@ const ParticleBackground = () => {
 
 const Hero = () => {
   return (
-    <div id="home" className="relative min-h-screen sm:min-h-screen lg:min-h-[80vh] xl:min-h-[75vh] overflow-hidden ">
+    <div id="home" className="relative min-h-screen sm:min-h-screen lg:min-h-[80vh] xl:min-h-[75vh]  overflow-hidden ">
       {/* Particle Background - spans entire page */}
       <ParticleBackground />
       
@@ -213,7 +213,7 @@ const Hero = () => {
 
           {/* Buttons with original components */}
           <motion.div
-            className="flex gap-4 justify-center lg:justify-start pt-2"
+            className="flex gap-4 justify-center lg:justify-start pt-2 relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}

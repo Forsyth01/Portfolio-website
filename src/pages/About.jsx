@@ -519,25 +519,24 @@ const AboutPage = () => {
               subtitle="The Story Behind the Code"
               icon={FiHeart}
             />
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-2 gap-8 items-center lg:items-start xl:items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="space-y-4"
+                className="space-y-4 lg:col-span-2 xl:col-span-1"
               >
                 <p className="text-slate-300 text-lg leading-relaxed">
-                  Hi! I'm Forsyth, a Full Stack Developer based in Lagos,
+                  Hi! I'm Forsyth, a Web Developer based in Lagos,
                   Nigeria, with 4 years of experience delivering web solutions
-                  to clients internationally. I specialize in building modern,
-                  scalable applications using React, Next.js, and Node.js.
+                  to clients locally & internationally. I specialize in building modern,
+                  scalable applications using React, Next.js, and Tailwindcss.
                 </p>
                 <p className="text-slate-300 text-lg leading-relaxed">
                   My freelance journey has allowed me to work with diverse
-                  clients across the USA and UK, tackling projects ranging from
-                  e-commerce platforms to SaaS applications. I thrive in remote
-                  collaboration environments and pride myself on clear
+                  clients across the USA and UK, tackling projects ranging
+                  from e-commerce platforms to engaging blog websites. I pride myself on clear
                   communication, meeting deadlines, and exceeding client
                   expectations.
                 </p>
@@ -559,7 +558,7 @@ const AboutPage = () => {
                 {/* <h3 className="text-2xl font-bold text-white mb-6 text-center">
                   At a Glance
                 </h3> */}
-                <div className="space-y-4">
+                <div className="space-y-4 ">
                   <img src="/profilepic2.jpg" alt="" className="" />
                 </div>
               </motion.div>

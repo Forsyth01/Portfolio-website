@@ -42,12 +42,12 @@ const Contact = () => {
           </div>
 
           {/* Center the grid container */}
-          <div className="flex justify-center items-center my-8">
-            <div className="grid sm:grid-cols-3 grid-cols-3 sm:gap-1 place-items-center">
-              <Resumebtn />
-              <Githubtn />
+          <div className="flex justify-center items-center my-8 relative">
+            <div className="grid sm:grid-cols-2 grid-cols-2 sm:gap-1 place-items-center">
+              {/* <Resumebtn /> */}
+              {/* <Githubtn /> */}
               <Linkedinbtn />
-              {/* <Mailbtn color="white" textColor="black"/> */}
+              <Mailbtn color="white" textColor="black"/>
             </div>
           </div>
         </div>

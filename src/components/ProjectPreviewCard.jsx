@@ -176,7 +176,7 @@ const ExploreMoreButton = () => {
 
 const ProjectPreview = () => {
   // Get first 6 projects for preview
-  const items = projectsData.slice(0, 6);
+  const items = projectsData.slice(0, 4);
 
   return (
     <div id="projects" className="overflow-hidden">

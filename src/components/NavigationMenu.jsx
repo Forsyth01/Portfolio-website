@@ -13,6 +13,7 @@ import {
   FiLinkedin,
 } from "react-icons/fi";
 import profilePic from "@/assets/images/profilepic2.jpg";
+import { FaXTwitter } from "react-icons/fa6";
 
 const NavigationMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -123,11 +124,11 @@ const NavigationMenu = () => {
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-green-500/30"
                   />
                   <div>
-                    <h3 className="text-white text-base sm:text-lg font-normal">
-                      Navigation
+                    <h3 className="text-white tracking font-medium text-base sm:text-lg ">
+                      Forsyth
                     </h3>
                     <p className="text-slate-400 text-[10px] sm:text-xs">
-                      Explore my portfolio
+                      Web developer / Designer
                     </p>
                   </div>
                 </div>
@@ -157,18 +158,18 @@ const NavigationMenu = () => {
 
               {/* Menu Footer */}
               <div className="p-3 sm:p-4 border-t border-green-500/20 bg-[#1f1d1d]">
-                <div className="flex items-center justify-between">
+                {/* <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5 sm:gap-2">
                     <FiCircle className="text-green-500 text-[6px] sm:text-[8px] fill-green-500 animate-pulse" />
                     <span className="text-[10px] sm:text-xs text-slate-400">
                       Available for work
                     </span>
                   </div>
-                </div>
+                </div> */}
                 {/* Social Icons */}
-                <div className="flex items-center gap-2.5 sm:gap-3 mt-2.5 sm:mt-3 pt-2.5 sm:pt-3 border-t border-green-500/10">
+                <div className="flex items-center gap-2.5 sm:gap-3 ">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/forsyth-okoeguale"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-slate-400 hover:text-green-500 transition-colors"
@@ -176,7 +177,7 @@ const NavigationMenu = () => {
                     <FiLinkedin className="text-base sm:text-lg" />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/Forsyth01"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-slate-400 hover:text-green-500 transition-colors"
@@ -184,7 +185,15 @@ const NavigationMenu = () => {
                     <FiGithub className="text-base sm:text-lg" />
                   </a>
                   <a
-                    href="mailto:your@email.com"
+                    href="https://x.com/Forsyth_X_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-400 hover:text-green-500 transition-colors"
+                  >
+                   <FaXTwitter className="text-base sm:text-lg" />
+                  </a>
+                  <a
+                    href="mailto:forsyth01.dev@email.com"
                     className="text-slate-400 hover:text-green-500 transition-colors"
                   >
                     <FiMail className="text-base sm:text-lg" />
