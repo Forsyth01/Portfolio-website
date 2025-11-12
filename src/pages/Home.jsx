@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 const Home = () => {
   return (
     <div className="">
-      {/* <Hero/> */}
+      <Hero/>
       {/* <SectionDivider /> */}
       <SkillsSwiper />
       {/* <SectionDivider /> */}
