@@ -127,7 +127,7 @@ const Hero = () => {
 
   const navLinks = [
     { name: "Home", icon: FiHome, href: "#home" },
-    // { name: "About", icon: FiUser, href: "#about" },
+    { name: "About", icon: FiUser, href: "/about" },
     { name: "Skills", icon: FiCode, href: "#skills" },
     { name: "Projects", icon: FiBriefcase, href: "#projects" },
     { name: "Contact", icon: FiMail, href: "#contact" },

@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import Project from "./pages/Project";
 import ScrollToTop from "./components/ScrollToTop";
+import AboutPage from "./pages/About";
 // import Navbar from "./components/Navbar";
 // import CustomCursor from "./components/Cursor";
 // import Nav from "./components/Nav";
@@ -20,7 +21,7 @@ const App = () => {
       <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<Project />} />
       </Routes>
       <Footer />
