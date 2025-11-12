@@ -20,8 +20,8 @@ const Home = () => {
       <SkillsSwiper />
       {/* <SectionDivider /> */}
       <HoverAnimation />
-      {/* <SectionDivider /> */}
-      {/* <Skills /> */}
+      <SectionDivider />
+      <Skills />
       {/* <SectionDivider /> */}
       {/* <Testimonials /> */}
       <Contact />

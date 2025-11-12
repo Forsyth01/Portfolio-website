@@ -1,4 +1,5 @@
 import projectsData from "@/data/myProjects";
+import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -9,6 +10,7 @@ const ProjectItem = ({ item, index }) => {
   return (
     <div
       ref={ref}
+      id="projects"
       className="relative min-h-[400px] lg:min-h-[500px] w-[90%] m-auto"
     >
       {/* Sticky Project Number - Background Element */}
@@ -21,9 +23,9 @@ const ProjectItem = ({ item, index }) => {
       </div>
 
       {/* Project Card */}
-      <div className="relative lg:flex items-center border xl:border-none border-gray-700 bg-[#1e1e1eb8] rounded-xl pt-10 backdrop-blur-sm">
+      <div className="relative lg:flex items-center border xl:border-none border-gray-700 bg-[#202120b8] rounded-xl pt-10 backdrop-blur-sm">
         {/* Left Content */}
-        <div className="w-full space-y-4 sm:px-10 px-2 relative z-10">
+        <div className="w-full space-y-4 sm:px-10 px-8 relative z-10">
           <h1 className="xl:text-3xl text-2xl font-semibold leading-tight tracking-tighter">
             {item.name}
           </h1>
@@ -61,7 +63,7 @@ const ProjectItem = ({ item, index }) => {
           <img
             src={item.image}
             alt={item.name}
-            className="lg:h-[350px] pt-10 lg:pt-2 xl:mt-10 object-cover rounded-tl-xl rounded-bl-xl sm:rounded-bl-none rounded-br-xl xl:w-full m-auto"
+            className="lg:h-[350px] h-[400px] pt-10 lg:pt-2 xl:mt-10 object-cover rounded-tl-xl rounded-bl-xl sm:rounded-bl-none rounded-br-xl xl:w-full m-auto"
           />
         </div>
       </div>
@@ -69,19 +71,37 @@ const ProjectItem = ({ item, index }) => {
   );
 };
 
+
 const ExploreMoreButton = () => {
   return (
-    <div className="flex justify-center items-center pb-20 pt-20 lg:pt-0">
+ <div className="flex justify-center items-center pb-20 pt-20 lg:pt-0">
       <Link
         to="/projects"
-        className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-black rounded-full font-bold text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/20"
+        className="group inline-flex items-center gap-2 text-white font-semibold text-lg cursor-pointer relative"
       >
-        <span className="relative z-10">View All Projects</span>
-        <FiArrowRight className="text-2xl relative z-10" />
+        {/* Text: changes color when parent hovered */}
+        <p className="transition-colors duration-300 group-hover:text-green-400">
+          View All Projects
+        </p>
+        
+        {/* Animated arrow icon */}
+        <motion.span
+          className="inline-block transition-colors duration-300 group-hover:text-green-400"
+          initial={{ x: 0 }}
+          whileHover={{ x: 5 }}
+          transition={{ duration: 0.3 }}
+        >
+          <FiArrowRight className="text-xl" />
+        </motion.span>
+
+        {/* Animated underline */}
+        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-green-400 to-emerald-500 group-hover:w-full transition-all duration-300"></span>
       </Link>
     </div>
   );
 };
+
+
 
 const ProjectPreview = () => {
   // Get first 6 projects for preview

@@ -147,9 +147,9 @@ const Hero = () => {
                     <div className="p-4 border-b border-green-500/20">
                       {/* Profile Picture */}
                       <div className="flex items-center gap-3 mb-3">
-                        <img 
-                          src={profilePic} 
-                          alt="Profile" 
+                        <img
+                          src={profilePic}
+                          alt="Profile"
                           className="w-12 h-12 rounded-full object-cover border-2 border-green-500/30"
                         />
                         <div>
@@ -197,23 +197,23 @@ const Hero = () => {
                       </div>
                       {/* Social Icons */}
                       <div className="flex items-center gap-3 mt-3 pt-3 border-t border-green-500/10">
-                        <a 
-                          href="https://linkedin.com" 
-                          target="_blank" 
+                        <a
+                          href="https://linkedin.com"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-slate-400 hover:text-green-500 transition-colors"
                         >
                           <FiLinkedin className="text-lg" />
                         </a>
-                        <a 
-                          href="https://github.com" 
-                          target="_blank" 
+                        <a
+                          href="https://github.com"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-slate-400 hover:text-green-500 transition-colors"
                         >
                           <FiGithub className="text-lg" />
                         </a>
-                        <a 
+                        <a
                           href="mailto:your@email.com"
                           className="text-slate-400 hover:text-green-500 transition-colors"
                         >

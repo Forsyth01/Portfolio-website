@@ -7,7 +7,8 @@ import Mailbtn from "./button/Mailbtn";
 
 const Contact = () => {
   return (
-    <div className="bg-[#1a1a1a] py-20">
+    <div className="bg-[#1a1a1a] py-16 "
+    id="contact">
       <div className="md:w-[60%] w-[90%] m-auto">
         <div className="">
           <div className="flex flex-col justify-center py-4">
