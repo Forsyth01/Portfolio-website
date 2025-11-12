@@ -2,7 +2,7 @@ import ProjectHead from "@/components/ProjectHeader";
 import projectsData from "@/data/myProjects";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
-import { FiArrowUpRight, FiArrowLeft, FiCircle, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiArrowUpRight, FiArrowLeft, FiExternalLink } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 // Particle Background Component (same as your Hero)
@@ -116,117 +116,149 @@ const ProjectItem = ({ item, index }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ 
-        duration: 0.5,
+        duration: 0.6,
         delay: index * 0.1,
         ease: "easeOut"
       }}
-      className="relative min-h-[400px] lg:min-h-[500px] w-[90%] md:w-[60%] m-auto"
+      className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] m-auto mb-20 lg:mb-28"
     >
-      {/* Sticky Project Number - Background Element */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      {/* Background Number */}
+      <div className="absolute -top-10 -left-4 lg:-left-10 w-full h-full overflow-hidden pointer-events-none z-0">
         <motion.div 
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          className="sticky top-32 xl:top-40 left-0 w-full flex justify-center xl:justify-start xl:pl-20"
+          transition={{ duration: 0.7, delay: index * 0.1 }}
+          className="sticky top-40 flex justify-start"
         >
-          <span className="text-[120px] sm:text-[160px] xl:text-[200px] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#fec212]/30 to-[#ff6b35]/30 leading-none select-none">
+          <span className="text-[140px] sm:text-[180px] lg:text-[220px] xl:text-[260px] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#fec212]/20 to-[#ff6b35]/15 leading-none select-none">
             {String(index + 1).padStart(2, "0")}
           </span>
         </motion.div>
       </div>
 
-      {/* Project Card */}
+      {/* Enhanced Project Card */}
       <motion.div 
-        whileHover={{ y: -8 }}
-        transition={{ duration: 0.3 }}
-        className="relative lg:flex items-center border xl:border-none border-gray-700 bg-[#202120b8] rounded-xl pt-10 backdrop-blur-sm"
+        whileHover={{ y: -6, scale: 1.02 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="relative bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] border border-gray-800/50 rounded-2xl overflow-hidden group hover:border-[#fec212]/30 transition-all duration-500 shadow-2xl"
       >
-        {/* Left Content */}
-        <div className="w-full space-y-4 sm:px-10 px-8 relative z-10">
-          <motion.h1 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 + 0.2, duration: 0.5 }}
-            className="xl:text-3xl text-2xl font-semibold leading-tight tracking-tighter"
-          >
-            {item.name}
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
-            className="text-sm text-slate-300"
-          >
-            {item.text}
-          </motion.p>
+        {/* Glow Effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#fec212]/5 to-[#ff6b35]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        
+        <div className="relative lg:flex items-stretch min-h-[500px] lg:min-h-[400px]">
+          {/* Left Content - Enhanced */}
+          <div className="w-full lg:w-1/2 space-y-6 p-8 sm:p-10 lg:p-12 relative z-10 flex flex-col justify-center">
+            {/* Project Badge */}
+           
 
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            <motion.h1 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-white"
+            >
+              {item.name}
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 + 0.4, duration: 0.5 }}
+              className="text-slate-300 leading-relaxed text-base lg:text-lg"
+            >
+              {item.text}
+            </motion.p>
+
+            {/* Skills - Enhanced */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 + 0.5, duration: 0.5 }}
+              className="space-y-3"
+            >
+              <h3 className="text-[#fec212] text-sm font-semibold uppercase tracking-wider">
+                Technologies Used
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {item.skills.map((skill, idx) => (
+                  <motion.span
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 + 0.6 + idx * 0.05 }}
+                    className="px-3 py-2 text-xs font-medium bg-gray-800/60 text-slate-200 rounded-lg border border-gray-700/50 hover:bg-gray-700/60 hover:border-[#fec212]/30 transition-all duration-300 cursor-default"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* CTA Button - Enhanced */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 + 0.7, duration: 0.5 }}
+              className="pt-4"
+            >
+              <motion.a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#fec212] to-[#ffe1d6] text-[#1a1a1a] font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#fec212]/25"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10">Visit Live Site</span>
+                <FiExternalLink className="relative z-10 text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              </motion.a>
+            </motion.div>
+          </div>
+
+          {/* Right Image - Enhanced */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, x: 20 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1 + 0.4, duration: 0.5 }}
+            transition={{ delay: index * 0.1 + 0.4, duration: 0.7 }}
+            className="w-full lg:w-1/2 relative overflow-hidden group/image"
           >
-            <h1 className="text-[#fec212] text-[12px] font-medium pb-2">
-              Built with:
-            </h1>
-            <div className="flex gap-2 flex-wrap">
-              {item.skills.map((skill, idx) => (
-                <motion.p
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.5 + idx * 0.05 }}
-                  className="py-2 text-[10px] bg-[#333333] text-white rounded-md sm:rounded-full px-3"
-                >
-                  {skill}
-                </motion.p>
-              ))}
+            {/* Image Container with Gradient Overlay */}
+            <div className="relative w-full h-full min-h-[300px] lg:min-h-[400px] overflow-hidden">
+              <motion.img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover absolute inset-0 group-hover/image:scale-110 transition-transform duration-700 ease-out"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+              />
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a]/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-[#1a1a1a]/60 lg:via-transparent" />
+              
+              {/* Shine Effect on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover/image:translate-x-[100%] transition-transform duration-1000" />
             </div>
+            
+            {/* Corner Accent */}
+            <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[#fec212]/50 rounded-tr-2xl" />
+            <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-[#ff6b35]/50 rounded-bl-2xl" />
           </motion.div>
-
-          <motion.a
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 + 0.6, duration: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex gap-2 w-fit items-center px-4 py-2 text-[#1d1d1d] bg-white rounded-md sm:rounded-full hover:opacity-90 transition-opacity"
-          >
-            <FiArrowUpRight />
-            <span className="text-sm">Visit Website</span>
-          </motion.a>
         </div>
-
-        {/* Right Image */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
-          className="flex flex-col justify-end w-full relative z-10"
-        >
-          <motion.img
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.4 }}
-            src={item.image}
-            alt={item.name}
-            className="lg:h-[350px] h-[400px] pt-10 lg:pt-2 xl:mt-10 object-cover rounded-tl-xl rounded-bl-xl sm:rounded-bl-none rounded-br-xl xl:w-full m-auto"
-          />
-        </motion.div>
       </motion.div>
     </motion.div>
   );
@@ -268,15 +300,6 @@ const BackButton = () => {
 };
 
 const ProjectPage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navLinks = [
-    { name: "Home", icon: FiArrowLeft, href: "/" },
-    { name: "Skills", href: "/#skills" },
-    { name: "Projects", href: "/#projects" },
-    { name: "Contact", href: "/#contact" },
-  ];
-
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Particle Background */}
@@ -313,17 +336,15 @@ const ProjectPage = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 py-12 sm:py-16 md:py-20 xl:py-2 space-y-16 sm:space-y-20 xl:space-y-28">
+      <div className="relative z-10 py-12 sm:py-16 md:py-20 xl:py-24 space-y-16 sm:space-y-20 xl:space-y-18">
         {/* Back Button */}
         <BackButton />
-
-
 
         {/* Project Header */}
         <ProjectHead />
         
         {/* All Projects */}
-        <div className="space-y-20 xl:space-y-10 pb-20">
+        <div className="space-y-24 lg:space-y-32 pb-20">
           {projectsData.map((item, index) => (
             <ProjectItem key={item.id} item={item} index={index} />
           ))}
