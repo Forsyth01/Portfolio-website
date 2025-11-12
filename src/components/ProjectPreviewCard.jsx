@@ -107,20 +107,33 @@ const ProjectItem = ({ item, index }) => {
 
         {/* Right Image */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
-          className="flex flex-col justify-end w-full relative z-10"
-        >
-          <motion.img
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.4 }}
-            src={item.image}
-            alt={item.name}
-            className="lg:h-[350px] h-[400px] pt-10 lg:pt-2 xl:mt-10 object-cover rounded-tl-xl rounded-bl-xl sm:rounded-bl-none rounded-br-xl xl:w-full m-auto"
-          />
-        </motion.div>
+            initial={{ opacity: 0, scale: 0.95, x: 20 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 + 0.4, duration: 0.7 }}
+            className="w-full lg:w-1/2 relative overflow-hidden group/image"
+          >
+            {/* Image Container with Gradient Overlay */}
+            <div className="relative w-full h-full min-h-[300px] lg:min-h-[400px] overflow-hidden mt-8 ">
+              <motion.img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover absolute inset-0 group-hover/image:scale-110 transition-transform duration-700 ease-out"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5 }}
+              />
+              
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a]/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-[#1a1a1a]/60 lg:via-transparent" />
+              
+              {/* Shine Effect on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover/image:translate-x-[100%] transition-transform duration-1000" />
+            </div>
+            
+            {/* Corner Accent */}
+            <div className="absolute top-8 right-0 w-12 h-12 border-t-2 border-r-2 border-[#fec212]/50 rounded-tr-2xl" />
+            <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[#ff6b35]/50 rounded-bl-2xl" />
+          </motion.div>
       </motion.div>
     </motion.div>
   );
