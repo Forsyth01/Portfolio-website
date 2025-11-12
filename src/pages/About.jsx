@@ -164,7 +164,6 @@ const SectionHeader = ({ title, subtitle, icon: Icon }) => (
     transition={{ duration: 0.6 }}
     className="text-center mb-12"
   >
-   
     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
       {title}
     </h2>
@@ -176,43 +175,30 @@ const SectionHeader = ({ title, subtitle, icon: Icon }) => (
 const ExperienceTimeline = () => {
   const experiences = [
     {
-      year: "2021 - Present",
+      year: "2025 - Present",
       role: "Freelance Full Stack Developer",
       company: "International Clients (USA, UK)",
       description:
-        "Delivering end-to-end web solutions for diverse clients across e-commerce, SaaS, and corporate sectors. Managing full project lifecycles from discovery to deployment, ensuring high-quality deliverables and client satisfaction.",
+        "Delivering end-to-end web solutions for diverse clients across e-commerce platforms to engaging blog websites. Managing full project lifecycles from discovery to deployment, ensuring high-quality deliverables and client satisfaction. tackling projects ranging from ",
       technologies: [
         "React",
         "Next.js",
-        "Node.js",
-        "TypeScript",
-        "MongoDB",
-        "AWS",
+        "Tailwindcss",
+        "Framer-motion",
+        "Nodejs",
+        "Firebase",
+        "Cloudinary"
       ],
-      highlights: [
-        "50+ projects delivered",
-        "International client base",
-        "Full-time freelance",
-      ],
+      highlights: ["International client base", "Full-time freelance"],
     },
     {
-      year: "2023 - Present",
-      role: "Contract Full Stack Developer",
-      company: "Various Tech Companies",
+      year: "July 2023 - Nov 2023",
+      role: "Contract Web Developer",
+      company: "Binaryblock",
       description:
-        "Providing specialized development services on contract basis, building scalable web applications and custom solutions. Focus on React ecosystem, modern JavaScript, and cloud-based architectures.",
-      technologies: [
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "PostgreSQL",
-        "Docker",
-      ],
-      highlights: [
-        "Remote collaboration",
-        "Agile workflows",
-        "Code reviews & mentoring",
-      ],
+        "Providing specialized development services on contract basis, building scalable web application and custom solutions. Focus on React ecosystem.",
+      technologies: ["React", "firebase", "Tailwind CSS"],
+      highlights: ["Remote collaboration", "Agile workflows"],
     },
     {
       year: "2021 - 2023",
@@ -220,7 +206,7 @@ const ExperienceTimeline = () => {
       company: "Freelance Portfolio",
       description:
         "Built foundation in web development through diverse projects including business websites, landing pages, and web applications. Established strong client relationships and developed expertise in modern development practices.",
-      technologies: ["JavaScript", "React", "WordPress", "HTML/CSS", "PHP"],
+      technologies: ["JavaScript", "React", "HTML/CSS"],
       highlights: [
         "Client acquisition",
         "Project management",
@@ -379,10 +365,11 @@ const SkillsShowcase = () => {
     {
       category: "Backend Development",
       skills: [
-        { name: "Node.js & Express", level: "Advanced" },
-        { name: "RESTful APIs", level: "Expert" },
-        { name: "MongoDB & PostgreSQL", level: "Advanced" },
-        { name: "Authentication & Security", level: "Advanced" },
+      { name: "Node.js & Express", level: "Advanced" },
+        // { name: "Node.js & Express", level: "Advanced" },
+        // { name: "RESTful APIs", level: "Expert" },
+        // { name: "MongoDB & PostgreSQL", level: "Advanced" },
+        // { name: "Authentication & Security", level: "Advanced" },
       ],
     },
     {
@@ -411,7 +398,7 @@ const SkillsShowcase = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      {skillCategories.map((category, catIndex) => (
+      {/* {skillCategories.map((category, catIndex) => (
         <motion.div
           key={catIndex}
           initial={{ opacity: 0, y: 30 }}
@@ -450,7 +437,7 @@ const SkillsShowcase = () => {
             ))}
           </div>
         </motion.div>
-      ))}
+      ))} */}
     </div>
   );
 };
@@ -528,17 +515,17 @@ const AboutPage = () => {
                 className="space-y-4 lg:col-span-2 xl:col-span-1"
               >
                 <p className="text-slate-300 text-lg leading-relaxed">
-                  Hi! I'm Forsyth, a Web Developer based in Lagos,
-                  Nigeria, with 4 years of experience delivering web solutions
-                  to clients locally & internationally. I specialize in building modern,
+                  Hi! I'm Forsyth, a Web Developer based in Lagos, Nigeria, with
+                  4 years of experience delivering web solutions to clients
+                  locally & internationally. I specialize in building modern,
                   scalable applications using React, Next.js, and Tailwindcss.
                 </p>
                 <p className="text-slate-300 text-lg leading-relaxed">
                   My freelance journey has allowed me to work with diverse
-                  clients across the USA and UK, tackling projects ranging
-                  from e-commerce platforms to engaging blog websites. I pride myself on clear
-                  communication, meeting deadlines, and exceeding client
-                  expectations.
+                  clients across the USA and UK, tackling projects ranging from
+                  e-commerce platforms to engaging blog websites. I pride myself
+                  on clear communication, meeting deadlines, and exceeding
+                  client expectations.
                 </p>
                 <p className="text-slate-300 text-lg leading-relaxed">
                   I approach every project with a focus on clean code, user
@@ -577,11 +564,11 @@ const AboutPage = () => {
 
           {/* Skills Section */}
           <section>
-            <SectionHeader
+            {/* <SectionHeader
               title="Technical Expertise"
               subtitle="Technologies & Tools"
               icon={FiCode}
-            />
+            /> */}
             <SkillsShowcase />
 
             {/* Additional competencies */}
