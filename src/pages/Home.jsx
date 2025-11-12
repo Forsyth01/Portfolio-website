@@ -18,7 +18,7 @@ const Home = () => {
       {/* <SectionDivider /> */}
       <SkillsSwiper />
       {/* <SectionDivider /> */}
-      <HoverAnimation />
+      {/* <HoverAnimation /> */}
       {/* <SectionDivider /> */}
       {/* <Skills /> */}
       {/* <SectionDivider /> */}

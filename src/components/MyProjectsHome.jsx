@@ -1,8 +1,4 @@
-import { binaryblock, posze } from "@/assets/images";
-import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaArrowRight } from "react-icons/fa";
-import { FiArrowUpRight } from "react-icons/fi";
-import { Link } from "react-router-dom";
+
 import ProjectPreview from "./ProjectPreviewCard";
 import ProjectHead from "./ProjectHeader";
 
