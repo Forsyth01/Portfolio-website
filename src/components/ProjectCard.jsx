@@ -8,19 +8,21 @@ const ProjectCard = () => {
       {projectsData.map((item) => (
         <div
           key={item.id}
-          className="xl:flex items-center border xl:border-non border-gray-700 bg-[#1e1e1eb8] rounded-xl pt-10"
+          className="flex flex-col xl:flex-row items-center border xl:border-none border-gray-700 bg-[#1e1e1eb8] rounded-xl overflow-hidden backdrop-blur-sm"
         >
-          <div className="w-full space-y-4 sm:px-10 px-2">
+          {/* Left Section (Text) */}
+          <div className="w-full space-y-4 sm:px-10 px-4 py-6 text-center xl:text-left">
             <h1 className="xl:text-3xl sm:text-2xl text-xl font-semibold leading-tight tracking-tighter">
               {item.name}
             </h1>
-            <p className="text-sm">{item.text}</p>
+
+            <p className="text-sm text-gray-300">{item.text}</p>
 
             <div>
               <h1 className="text-[#fec212] text-[12px] font-medium pb-2">
                 Built with:
               </h1>
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex gap-2 flex-wrap justify-center xl:justify-start">
                 {item.skills.map((skill, index) => (
                   <p
                     key={index}
@@ -36,18 +38,21 @@ const ProjectCard = () => {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex gap-2 w-fit hover:scale-[106%] transition-all items-center px-4 py-2 text-[#1d1d1d] bg-white rounded-md sm:rounded-full"
+              className="flex gap-2 w-fit mx-auto xl:mx-0 hover:scale-105 transition-all items-center px-4 py-2 text-[#1d1d1d] bg-white rounded-md sm:rounded-full"
             >
               <FiArrowUpRight />
               <span className="text-sm">Visit Website</span>
             </a>
           </div>
 
-          <div className="flex flex-col justify-end w-full">
+          {/* Right Section (Image) */}
+          <div className="w-full">
             <motion.img
               src={item.image}
               alt={item.name}
-              className="xl:h-[350px] pt-10 xl:pt-2 xl:mt-10 object-cover rounded-tl-xl rounded-bl-xl sm:rounded-bl-none rounded-br-xl xl:w-full m-auto"
+              className="w-full h-[220px] sm:h-[300px] xl:h-[350px] object-cover rounded-b-xl xl:rounded-none xl:rounded-r-xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             />
           </div>
         </div>
