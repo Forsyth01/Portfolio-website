@@ -14,6 +14,28 @@ li {
   overflow-x: hidden;
 }
 
+body {
+  background-color: #0a0a0a;
+  position: relative;
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at center right, rgba(34, 197, 94, 0.15) 0%, transparent 70%),
+    radial-gradient(circle at center left, rgba(16, 185, 129, 0.15) 0%, transparent 70%),
+    radial-gradient(circle at center, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
+  opacity: 0.55;
+}
 
 li {
   color: gainsboro
