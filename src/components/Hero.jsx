@@ -26,7 +26,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative min-h-screen sm:min-h-screen lg:min-h-[75vh] xl:min-h-[70vh]">
+    <div className="relative min-h-screen sm:min-h-screen lg:min-h-[75vh] xl:min-h-[70vh] overflow-hidden ">
       {/* Simple, reliable gradient background */}
       <div className="">
         <div className="fixed inset-0 ">
@@ -74,37 +74,6 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Mobile vector & availability */}
-          <div className="hidden pb-4">
-            <motion.div
-              className="flex flex-col justify-center mb-6"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="relative inline-block mx-auto">
-                <div className="absolute -inset-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full blur-xl"></div>
-                <img
-                  src={vectorp}
-                  alt="Profile"
-                  className="relative h-[190px] w-[200px] object-cover"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="inline-flex gap-2 items-center bg-slate-900/50 backdrop-blur-sm border border-green-500/20 w-fit mx-auto py-2.5 px-5 rounded-full"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <FiCircle className="text-green-500 text-[8px] fill-green-500" />
-              <span className="text-sm text-slate-300 font-normal">
-                Available for opportunities
-              </span>
-            </motion.div>
-          </div>
-
           {/* Desktop Menu Icon - top right */}
           <div className="hidden lg:block fixed z-10 top-8 right-8">
             <motion.button
@@ -231,7 +200,7 @@ const Hero = () => {
             <h1 className="text-[32px] sm:text-[52px] xl:text-[64px] font-normal mb-4 leading-[1.1] tracking-tight">
               Hi, I'm{" "}
               <span className="inline-block relative">
-                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">
+                <span className="relative z-0 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">
                   Forsyth
                 </span>
                 <motion.div

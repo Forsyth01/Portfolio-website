@@ -16,7 +16,7 @@ const App = () => {
   const location = useLocation();
   return (
     <div className="body1 ">
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <Sidenav/> */}
       {/* <Side/> */}
       {/* <CustomCursor /> */}
