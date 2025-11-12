@@ -1,9 +1,114 @@
 import ProjectHead from "@/components/ProjectHeader";
 import projectsData from "@/data/myProjects";
-import { motion } from "framer-motion";
-import React, { useRef } from "react";
-import { FiArrowUpRight, FiArrowLeft } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { FiArrowUpRight, FiArrowLeft, FiCircle, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
+
+// Particle Background Component (same as your Hero)
+const ParticleBackground = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let animationFrameId;
+    let particles = [];
+
+    // Set canvas size
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = Math.max(document.documentElement.scrollHeight, window.innerHeight);
+    };
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // Particle class
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+        this.opacity = Math.random() * 0.5 + 0.2;
+        this.color = Math.random() > 0.5 ? "34, 197, 94" : "16, 185, 129"; // green shades
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Wrap around edges
+        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.y < 0) this.y = canvas.height;
+      }
+
+      draw() {
+        ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // Create particles
+    const particleCount = Math.min(150, Math.floor((canvas.width * canvas.height) / 15000));
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw particles
+      particles.forEach((particle) => {
+        particle.update();
+        particle.draw();
+      });
+
+      // Draw connections
+      particles.forEach((particleA, indexA) => {
+        particles.slice(indexA + 1).forEach((particleB) => {
+          const dx = particleA.x - particleB.x;
+          const dy = particleA.y - particleB.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 120) {
+            ctx.strokeStyle = `rgba(34, 197, 94, ${0.15 * (1 - distance / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particleA.x, particleA.y);
+            ctx.lineTo(particleB.x, particleB.y);
+            ctx.stroke();
+          }
+        });
+      });
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{ opacity: 0.6 }}
+    />
+  );
+};
 
 const ProjectItem = ({ item, index }) => {
   const ref = useRef(null);
@@ -28,7 +133,7 @@ const ProjectItem = ({ item, index }) => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
-          className=""
+          className="sticky top-32 xl:top-40 left-0 w-full flex justify-center xl:justify-start xl:pl-20"
         >
           <span className="text-[120px] sm:text-[160px] xl:text-[200px] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#fec212]/30 to-[#ff6b35]/30 leading-none select-none">
             {String(index + 1).padStart(2, "0")}
@@ -163,19 +268,148 @@ const BackButton = () => {
 };
 
 const ProjectPage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", icon: FiArrowLeft, href: "/" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Contact", href: "/#contact" },
+  ];
+
   return (
-    <div className="min-h-screen py-12 sm:py-16 md:py-20 xl:py-2 space-y-16 sm:space-y-20 xl:space-y-28 relative">
-      {/* Back Button */}
-      <BackButton />
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Particle Background */}
+      <ParticleBackground />
       
-      {/* Project Header */}
-      <ProjectHead />
-      
-      {/* All Projects */}
-      <div className="space-y-20 xl:space-y-10">
-        {projectsData.map((item, index) => (
-          <ProjectItem key={item.id} item={item} index={index} />
-        ))}
+      {/* Gradient Background (same as Hero) */}
+      <div className="fixed inset-0">
+        {/* Right gradient */}
+        <div
+          className="absolute top-0 right-0 w-[800px] h-full opacity-55"
+          style={{
+            background:
+              "radial-gradient(circle at center right, rgba(34, 197, 94, 0.15) 0%, transparent 70%)",
+          }}
+        ></div>
+
+        {/* Left gradient */}
+        <div
+          className="absolute top-0 left-0 w-[800px] h-full opacity-55"
+          style={{
+            background:
+              "radial-gradient(circle at center left, rgba(16, 185, 129, 0.15) 0%, transparent 70%)",
+          }}
+        ></div>
+
+        {/* Center subtle glow */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-50"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)",
+          }}
+        ></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 py-12 sm:py-16 md:py-20 xl:py-2 space-y-16 sm:space-y-20 xl:space-y-28">
+        {/* Back Button */}
+        <BackButton />
+
+        {/* Menu Button for Mobile */}
+        <div className="fixed z-30 top-6 right-6 sm:top-8 sm:right-8 md:hidden">
+          <motion.button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="relative z-50 p-3 bg-slate-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl hover:bg-slate-900/70 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.div
+              animate={{ rotate: isMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {isMenuOpen ? (
+                <FiArrowLeft className="text-green-500 text-xl" />
+              ) : (
+                <FiArrowLeft className="text-green-500 text-xl" />
+              )}
+            </motion.div>
+          </motion.button>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <>
+                {/* Backdrop */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+                />
+
+                {/* Menu Box */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0, x: 0, y: -20 }}
+                  animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+                  exit={{ opacity: 0, scale: 0, x: 0, y: -20 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                  className="absolute top-16 right-0 w-56 bg-[#1a1a1a] backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-2xl z-50 overflow-hidden"
+                >
+                  {/* Menu Header */}
+                  <div className="p-4 border-b border-green-500/20">
+                    <h3 className="text-white text-lg font-normal">Navigation</h3>
+                    <p className="text-slate-400 text-xs">Quick links</p>
+                  </div>
+
+                  {/* Navigation Links */}
+                  <div className="p-2">
+                    {navLinks.map((link, index) => (
+                      <motion.a
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        whileHover={{
+                          x: 4,
+                          backgroundColor: "rgba(34, 197, 94, 0.1)",
+                        }}
+                        className="flex items-center gap-3 p-3 rounded-xl text-slate-300 hover:text-white transition-colors group"
+                      >
+                        {link.icon && <link.icon className="text-green-500 text-lg" />}
+                        <span className="font-normal">{link.name}</span>
+                      </motion.a>
+                    ))}
+                  </div>
+
+                  {/* Menu Footer */}
+                  <div className="p-4 border-t border-green-500/20 bg-[#1f1d1d]">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <FiCircle className="text-green-500 text-[8px] fill-green-500 animate-pulse" />
+                        <span className="text-xs text-slate-400">Available for work</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Project Header */}
+        <ProjectHead />
+        
+        {/* All Projects */}
+        <div className="space-y-20 xl:space-y-10 pb-20">
+          {projectsData.map((item, index) => (
+            <ProjectItem key={item.id} item={item} index={index} />
+          ))}
+        </div>
       </div>
     </div>
   );
