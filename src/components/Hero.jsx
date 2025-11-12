@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Resumebtn from "./button/Resumebtn";
 import Githubtn from "./button/Githubtn";
 import {
@@ -40,54 +40,52 @@ const Hero = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Floating animation variants
-  const floatingVariants = {
-    animate: {
-      y: [0, -20, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
     <div id="home" className="relative min-h-screen sm:min-h-screen lg:min-h-[75vh] xl:min-h-[70vh] overflow-hidden">
-      {/* Animated gradient background with parallax */}
-      <div className="fixed inset-0">
-        {/* Right gradient with parallax */}
-        <motion.div
-          className="absolute top-0 right-0 w-[800px] h-full opacity-55"
-          style={{
-            background:
-              "radial-gradient(circle at center right, rgba(34, 197, 94, 0.15) 0%, transparent 70%)",
-            x: mousePosition.x * 50,
-            y: mousePosition.y * 50,
-          }}
-        />
+      {/* Simple, reliable gradient background */}
+      <div className="">
+        <div className="fixed inset-0">
+          {/* Right gradient with parallax */}
+          <motion.div
+            className="absolute top-0 right-0 w-[800px] h-full opacity-55 z-100"
+            style={{
+              background:
+                "radial-gradient(circle at center right, rgba(34, 197, 94, 0.15) 0%, transparent 70%)",
+              x: mousePosition.x * 30,
+              y: mousePosition.y * 30,
+            }}
+          />
 
-        {/* Left gradient with parallax */}
-        <motion.div
-          className="absolute top-0 left-0 w-[800px] h-full opacity-55"
-          style={{
-            background:
-              "radial-gradient(circle at center left, rgba(16, 185, 129, 0.15) 0%, transparent 70%)",
-            x: mousePosition.x * -50,
-            y: mousePosition.y * -50,
-          }}
-        />
+          {/* Left gradient with parallax */}
+          <motion.div
+            className="absolute top-0 left-0 w-[800px] h-full opacity-55 z-100"
+            style={{
+              background:
+                "radial-gradient(circle at center left, rgba(16, 185, 129, 0.15) 0%, transparent 70%)",
+              x: mousePosition.x * -30,
+              y: mousePosition.y * -30,
+            }}
+          />
 
+          {/* Center subtle glow */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-50"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)",
+            }}
+          />
+        </div>
         {/* Animated center glow */}
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-100"
           style={{
             background:
               "radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)",
           }}
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.5, 0.8, 0.5],
+            scale: [1, 1.1, 1],
+            opacity: [1, 0.8, 1],
           }}
           transition={{
             duration: 4,
@@ -120,22 +118,27 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="xl:w-[60%] sm:w-[70%] w-full max-w-screen-lg mx-auto px-6 flex flex-col h-[95vh] sm:py-10 lg:py-0 sm:h-full lg:h-[75vh] justify-center relative z-10">
-        <motion.div className="space-y-8">
-          {/* Menu Icon */}
-          <div className="fixed z-50 top-6 right-6 sm:top-8 sm:right-8">
+      <div className="xl:w-[60%] sm:w-[70%] w-full max-w-screen-lg mx-auto px-6 flex flex-col h-[95vh] sm:py-10 lg:py-0 sm:h-full lg:h-[75vh] justify-center">
+        <motion.div
+          className="space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Menu Icon - top right */}
+          <div className="fixed z-[100] top-6 right-6 sm:top-8 sm:right-8">
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative p-3 bg-slate-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl hover:bg-slate-900/70 transition-colors"
+              className="relative z-[100] p-3 bg-slate-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl hover:bg-slate-900/70 transition-colors"
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               initial={{ opacity: 0, x: 100, rotate: -180 }}
               animate={{ opacity: 1, x: 0, rotate: 0 }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 0.4,
                 type: "spring",
-                stiffness: 200
+                stiffness: 200,
               }}
             >
               <motion.div
@@ -154,6 +157,7 @@ const Hero = () => {
             <AnimatePresence>
               {isMenuOpen && (
                 <>
+                  {/* Backdrop */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -162,6 +166,7 @@ const Hero = () => {
                     className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
                   />
 
+                  {/* Menu Box */}
                   <motion.div
                     initial={{
                       opacity: 0,
@@ -188,8 +193,9 @@ const Hero = () => {
                       transformOrigin: "top right",
                     }}
                   >
+                    {/* Menu Header */}
                     <div className="p-4 border-b border-green-500/20">
-                      <motion.div 
+                      <motion.div
                         className="flex items-center gap-3 mb-3"
                         initial={{ x: -50, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -213,6 +219,7 @@ const Hero = () => {
                       </motion.div>
                     </div>
 
+                    {/* Navigation Links */}
                     <div className="p-2">
                       {navLinks.map((link, index) => (
                         <motion.a
@@ -251,15 +258,17 @@ const Hero = () => {
                       ))}
                     </div>
 
+                    {/* Menu Footer */}
                     <div className="p-4 border-t border-green-500/20 bg-[#1f1d1d]">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <FiCircle className="text-green-500 text-[8px] fill-green-500 animate-pulse" />
                           <span className="text-xs text-slate-400">
-                            Available for work
+                            Available for work 
                           </span>
                         </div>
                       </div>
+                      {/* Social Icons */}
                       <div className="flex items-center gap-3 mt-3 pt-3 border-t border-green-500/10">
                         {[
                           { icon: FiLinkedin, href: "https://linkedin.com" },
@@ -286,7 +295,7 @@ const Hero = () => {
             </AnimatePresence>
           </div>
 
-          {/* Heading with crazy animations */}
+          {/* Heading with gradient */}
           <motion.div
             initial={{ opacity: 0, y: 100, rotateX: -90 }}
             animate={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -329,7 +338,7 @@ const Hero = () => {
             </h1>
           </motion.div>
 
-          {/* Description with stagger effect */}
+          {/* Description with better spacing */}
           <motion.div
             className="space-y-4 max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
             initial="hidden"
@@ -383,7 +392,7 @@ const Hero = () => {
             </motion.p>
           </motion.div>
 
-          {/* Buttons with bounce animation */}
+          {/* Buttons with original components */}
           <motion.div
             className="flex gap-4 justify-center lg:justify-start pt-2"
             initial={{ opacity: 0, y: 100, scale: 0.5 }}
