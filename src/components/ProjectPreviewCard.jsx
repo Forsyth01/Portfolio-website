@@ -10,7 +10,7 @@ const ProjectItem = ({ item, index }) => {
   return (
     <div
       ref={ref}
-      id="projects"
+     
       className="relative min-h-[400px] lg:min-h-[500px] w-[90%] m-auto"
     >
       {/* Sticky Project Number - Background Element */}

@@ -17,7 +17,7 @@ const ProjectHead = () => {
   };
 
   return (
-    <div className="text-center w-[90%] m-auto">
+    <div  id="projects" className="text-center w-[90%] m-auto">
       {/* Container that animates children on scroll */}
       <motion.div
         initial="hidden"
