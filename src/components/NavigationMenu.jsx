@@ -22,7 +22,7 @@ const NavigationMenu = () => {
     { name: "Home", icon: FiHome, href: "#home" },
     { name: "About", icon: FiUser, href: "/about" },
     { name: "Skills", icon: FiCode, href: "#skills" },
-    { name: "Projects", icon: FiBriefcase, href: "#projects" },
+    { name: "Projects", icon: FiBriefcase, href: "/projects" },
     { name: "Contact", icon: FiMail, href: "#contact" },
   ];
 
@@ -119,7 +119,7 @@ const NavigationMenu = () => {
               <div className="p-3 sm:p-4 border-b border-green-500/20">
                 <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-3">
                   <img
-                    src={profilePic}
+                    src="/profilepic5.jpg"
                     alt="Profile"
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-green-500/30"
                   />

@@ -19,7 +19,7 @@ const Contact = () => {
               <div className="relative ">
                 <div className="">
                   <img
-                    src="/profilepic2.jpg"
+                    src="/profilepic3.jpg"
                     alt="Profile"
                     className="h-[190px] w-[200px] object-cover rounded-full "
                   />

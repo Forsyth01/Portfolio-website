@@ -546,7 +546,7 @@ const AboutPage = () => {
                   At a Glance
                 </h3> */}
                 <div className="space-y-4 ">
-                  <img src="/profilepic2.jpg" alt="" className="" />
+                  <img src="/profilepic4.jpg" alt="" className="lg:h-[450px] w-full object-contain" />
                 </div>
               </motion.div>
             </div>
