@@ -8,7 +8,7 @@ const experiences = [
     period: "June 2023 - May 2024",
     description: [
       "As a front-end developer at BinaryBlock, I designed and implemented user interfaces, ensuring responsive and visually appealing designs. I collaborated with the team to develop seamless user experiences using ReactJS and TailwindCSS, focusing on delivering high-quality, efficient, and interactive web applications.",
-    ],
+    ], 
   },
   {
     company: "Peace House University",
