@@ -146,8 +146,8 @@ const ProjectItem = ({ item, index }) => {
           </div>
           
           {/* Corner Accent */}
-          <div className="absolute top-8 right-0 w-12 h-12 border-t-2 border-r-2 border-[#fec212]/50 rounded-tr-2xl" />
-          <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[#ff6b35]/50 rounded-bl-2xl" />
+          <div className="absolute top-8 right-0 w-12 h-12 border-t-2 border-r-2 border-[#fec212]/50 " />
+          <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[#ff6b35]/50 " />
         </motion.div>
       </motion.div>
     </motion.div>

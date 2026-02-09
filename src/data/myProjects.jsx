@@ -13,7 +13,7 @@ const projectsData = [
   {
     id: 1,
     // image: bukkaisland,
-        video: "/bukkailandvid.mp4",
+        video: "/bukkaislandvid.mp4",
 
     name: "Bukka Island",
     text: "A Houston food truck needed more than just a website—they needed a way to update their menu without calling me every week. So I built them a full site with an admin dashboard where they can add new dishes, swap out images, and keep things fresh on their own.",
@@ -22,25 +22,21 @@ const projectsData = [
     link: "https://www.bukkaisland.com/",
   },
   {
-    id: 33,
-    // image: bukkaisland,
-        video: "/nomadvid1.mp4",
-
+    id: 8,
+    video: "/nomadvid1.mp4",
     name: "Nomad Pepe",
-    text: "A Houston food truck needed more than just a website—they needed a way to update their menu without calling me every week. So I built them a full site with an admin dashboard where they can add new dishes, swap out images, and keep things fresh on their own.",
+    text: "Meme coin project that wanted a landing page matching the energy of crypto Twitter. Had to feel fun and a little unhinged—because that's the whole vibe—but still load fast since most people would hit it from their phones first.",
     icon: <FaReact size={50} />,
-    skills: ["Nextjs", "TailwindCSS", "Firebase", "Framer-motion", "Cloudinary"],
+    skills: ["Nextjs", "TailwindCSS", "Cloudinary", "Framer Motion"],
     link: "https://www.nomadpepe.xyz/",
   },
   {
-    id: 33,
-    // image: bukkaisland,
-        video: "/ralynvid12.mp4",
-
+    id: 9,
+    video: "/ralynvid12.mp4",
     name: "Ralyn Limited",
-    text: "A Houston food truck needed more than just a website—they needed a way to update their menu without calling me every week. So I built them a full site with an admin dashboard where they can add new dishes, swap out images, and keep things fresh on their own.",
+    text: "Company got tired of explaining what they do over and over. The website needed to answer the obvious stuff before anyone picks up the phone—who they are, what they offer, and how to reach them. No fancy gimmicks, just straight to the point.",
     icon: <FaReact size={50} />,
-    skills: ["Nextjs", "TailwindCSS", "Firebase", "Framer-motion", "Cloudinary"],
+    skills: ["Nextjs", "TailwindCSS", "Framer Motion", "Supabase"],
     link: "https://ralyn.vercel.app/",
   },
   {
