@@ -41,7 +41,7 @@ const projectsData = [
     text: "A Houston food truck needed more than just a website—they needed a way to update their menu without calling me every week. So I built them a full site with an admin dashboard where they can add new dishes, swap out images, and keep things fresh on their own.",
     icon: <FaReact size={50} />,
     skills: ["Nextjs", "TailwindCSS", "Firebase", "Framer-motion", "Cloudinary"],
-    link: "https://www.nomadpepe.xyz/",
+    link: "https://ralyn.vercel.app/",
   },
   {
     id: 2,
