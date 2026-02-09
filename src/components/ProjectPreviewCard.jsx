@@ -58,7 +58,7 @@ const ProjectItem = ({ item, index }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05 + 0.15, duration: 0.3 }} // Faster
-            className="text-sm"
+            className="text-md tracking-wide"
           >
             {item.text}
           </motion.p>
@@ -111,23 +111,38 @@ const ProjectItem = ({ item, index }) => {
           whileInView={{ opacity: 1, scale: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.05 + 0.2, duration: 0.4 }} // Faster
-          className="w-full lg:w-1/2 relative overflow-hidden group/image"
+          className="w-full lg:w-2/2 relative overflow-hidden group/image"
         >
-          {/* Image Container with Gradient Overlay */}
+          {/* Image/Video Container with Gradient Overlay */}
           <div className="relative w-full h-full min-h-[300px] lg:min-h-[400px] overflow-hidden mt-8">
-            <motion.img
-              src={item.image}
-              alt={item.name}
-              className="w-full h-full object-cover absolute inset-0 group-hover/image:scale-110 transition-transform duration-500 ease-out" // Faster scale
-              whileHover={{ scale: 1.03 }} // Reduced scale on mobile
-              transition={{ duration: 0.3 }} // Faster
-            />
+            {item.video ? (
+              <motion.video
+                src={item.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                onMouseEnter={(e) => e.target.pause()}
+                onMouseLeave={(e) => e.target.play()}
+                className="w-full h-full object-cover absolute inset-0 group-hover/image:scale-110 transition-transform duration-500 ease-out cursor-pointer"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+              />
+            ) : (
+              <motion.img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover absolute inset-0 group-hover/image:scale-110 transition-transform duration-500 ease-out"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+              />
+            )}
             
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a]/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-[#1a1a1a]/60 lg:via-transparent" />
-            
+            <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a]/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-[#1a1a1a]/60 lg:via-transparent pointer-events-none" />
+
             {/* Shine Effect on Hover - Disabled on mobile for performance */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover/image:translate-x-[100%] transition-transform duration-1000 hidden lg:block" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover/image:translate-x-[100%] transition-transform duration-1000 hidden lg:block pointer-events-none" />
           </div>
           
           {/* Corner Accent */}

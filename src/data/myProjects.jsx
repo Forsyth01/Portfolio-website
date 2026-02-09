@@ -12,9 +12,11 @@ import astellar from "@/assets/images/Astellar.png";
 const projectsData = [
   {
     id: 1,
-    image: bukkaisland,
+    // image: bukkaisland,
+        video: "/bukkailandvid.mp4",
+
     name: "Bukka Island",
-    text: "A full-featured web platform for a Houston-based food truck restaurant. The site includes an interactive menu, about page, and a secure admin dashboard for managing content with full CRUD functionality and authentication—designed for speed, scalability, and a seamless user experience",
+    text: "A Houston food truck needed more than just a website—they needed a way to update their menu without calling me every week. So I built them a full site with an admin dashboard where they can add new dishes, swap out images, and keep things fresh on their own.",
     icon: <FaReact size={50} />,
     skills: ["Nextjs", "TailwindCSS", "Firebase", "Framer-motion", "Cloudinary"],
     link: "https://www.bukkaisland.com/",
@@ -23,25 +25,25 @@ const projectsData = [
     id: 2,
     image: htxcityrentals,
     name: "Htxcityrentals",
-    text: "I designed and developed a modern event rental website for HtxCityRentals, a business specializing in event equipment and furniture rentals. The platform allows customers to seamlessly browse rental items, add them to a cart, and request a personalized quote.",
+    text: "Event rental company that was drowning in quote requests via DMs and phone calls. Built them a proper catalog where customers can browse items, fill their cart, and send a quote request—all without the back-and-forth.",
     icon: <FaReact size={50} />,
     skills: ["ReactJS", "TailwindCSS", "Framer Motion", "Emailjs", "Firebase"],
     link: "http://htxcityrentals.com/",
   },
-    {
+  {
     id: 6,
     image: emgee,
     name: "Design Portfolio",
-    text: "Developed a sleek and responsive portfolio website for a professional designer, featuring smooth UI animations, modern aesthetics, and an intuitive layout that highlights their creative work effectively across all devices.",
+    text: "A designer needed their work to speak for itself. Kept the UI minimal so the projects could breathe, added some subtle animations to make scrolling feel good, and made sure it loads fast—because nobody's waiting around for a slow portfolio.",
     icon: <FaReact size={50} />,
     skills: ["Nextjs", "TailwindCSS", "Framer Motion"],
     link: "https://seniordesigner.vercel.app/",
   },
-    {
+  {
     id: 7,
     image: astellar,
     name: "Astellar Homes & Decor",
-    text: "Built a responsive blog website for Astellar Homes & Decor, featuring an admin dashboard for content management and a clean, modern interface that showcases interior design projects, services, and articles seamlessly.",
+    text: "Interior design blog with a twist—the client wanted to post articles and showcase projects without touching code. Built a custom dashboard so they can upload photos, write posts, and manage everything themselves.",
     icon: <FaReact size={50} />,
     skills: ["Nextjs", "Firebase", "Cloudinary", "TailwindCSS", "Framer Motion"],
     link: "https://astellarhomesdecor.vercel.app/",
@@ -50,7 +52,7 @@ const projectsData = [
     id: 3,
     image: peacehouse,
     name: "Peace House University",
-    text: "I designed the user interface and developed the landing page for Peace House University, leveraging my expertise in front-end development and modern tools like ReactJS and TailwindCSS.",
+    text: "Landing page for a university. The challenge was making an educational site feel welcoming instead of boring—so I focused on clear information hierarchy and smooth interactions that guide visitors naturally.",
     icon: <FaReact size={50} />,
     skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
     link: "https://peacehouseuniversity.netlify.app/",
@@ -59,7 +61,7 @@ const projectsData = [
     id: 4,
     image: posze,
     name: "Posze",
-    text: "I developed the landing page for Posze, a fashion website, focusing on sleek, modern aesthetics and an engaging user interface. Leveraging ReactJS and TailwindCSS, I ensured the design was visually appealing, responsive, and aligned with the brand's style.",
+    text: "Fashion brand landing page. They wanted something bold that matched their aesthetic—lots of visual impact, smooth scroll animations with GSAP, and that high-end feel you'd expect from a fashion site.",
     icon: <FaNodeJs size={50} />,
     skills: ["ReactJS", "TailwindCSS", "GSAP"],
     link: "https://posze.netlify.app/",
@@ -68,13 +70,11 @@ const projectsData = [
     id: 5,
     image: noteapp,
     name: "Noteapp",
-    text: "I created a note app that allows users to easily create, update, and delete notes. By using Firebase as the backend, the app solves the problem of managing and storing notes efficiently.",
+    text: "Simple note-taking app I built to get better at Firebase. Nothing fancy—just create, edit, delete notes. Sometimes the best projects are the ones that solve a simple problem well.",
     icon: <FaReact size={50} />,
     skills: ["ReactJS", "TailwindCSS", "Framer Motion"],
     link: "https://noteapp01.netlify.app/",
   },
-
-
 ];
 
 export default projectsData;

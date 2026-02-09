@@ -35,7 +35,7 @@ const ProjectCard = () => {
                 {item.name}
               </h1>
 
-              <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-400 text-md sm:text-base leading-relaxed ">
                 {item.text}
               </p>
 
@@ -86,23 +86,36 @@ const ProjectCard = () => {
               </div>
             </div>
 
-            {/* Right Section (Image) */}
+            {/* Right Section (Image/Video) */}
             <div className="w-full xl:w-1/2 relative group/img overflow-hidden">
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60 z-10"></div>
-              
-              {/* Image */}
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-[280px] sm:h-[350px] xl:h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-              
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60 z-10 pointer-events-none"></div>
+
+              {/* Video or Image */}
+              {item.video ? (
+                <video
+                  src={item.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  onMouseEnter={(e) => e.target.pause()}
+                  onMouseLeave={(e) => e.target.play()}
+                  className="w-full h-[280px] sm:h-[350px] xl:h-full object-cover transform group-hover:scale-105 transition-transform duration-700 cursor-pointer"
+                />
+              ) : (
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-[280px] sm:h-[350px] xl:h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+              )}
+
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-              
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 pointer-events-none"></div>
+
               {/* Corner decoration */}
-              <div className="absolute bottom-4 right-4 w-16 h-16 border-r-2 border-b-2 border-green-500/30 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
+              <div className="absolute bottom-4 right-4 w-16 h-16 border-r-2 border-b-2 border-green-500/30 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30 pointer-events-none"></div>
             </div>
           </div>
         </motion.div>

@@ -1,16 +1,8 @@
 import React from "react";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6"; // ✅ New X (Twitter) icon
+import { socialLinks } from "../constants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { icon: FiGithub, href: "https://github.com/Forsyth01", label: "GitHub" },
-    { icon: FiLinkedin, href: "https://www.linkedin.com/in/forsyth-okoeguale", label: "LinkedIn" },
-    { icon: FaXTwitter, href: "https://x.com/Forsyth_X_", label: "Twitter" }, // ✅ Updated icon
-    { icon: FiMail, href: "mailto:forsyth01.dev@email.com", label: "Email" },
-  ];
 
   return (
     <footer className="w-full border-t border-gray-800 bg-[#1a1a1a]">

@@ -1,19 +1,18 @@
 import React from "react";
 import { FiMail } from "react-icons/fi";
+import SocialButton from "./SocialButton";
+import { contactEmail } from "../../constants";
 
 const Mailbtn = ({ color = "#1d1d1d", textColor = "#ffffff" }) => {
   return (
-    <div>
-      <a href="mailto:forsyth01.dev@gmail.com">
-        <button
-          className={`flex gap-2 hover:scale-[106%] transition-all items-center  sm:px-8 py-2 px-4 rounded-md sm:rounded-full duration-500 sm:mt-0  `}
-          style={{ backgroundColor: color , color: textColor }}
-        >
-          <FiMail className="" style={{color: textColor}} /> {/* Mail icon */}
-          <p className=" rounded-full text-center text-sm" style = {{color: textColor}}>Send a mail</p>
-        </button>
-      </a>
-    </div>
+    <SocialButton
+      icon={FiMail}
+      label="Send a mail"
+      href={`mailto:${contactEmail}`}
+      isExternal={false}
+      bgColor={color}
+      textColor={textColor}
+    />
   );
 };
 

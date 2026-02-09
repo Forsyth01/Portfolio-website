@@ -1,30 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FiCircle,
-  FiMenu,
-  FiX,
-  FiHome,
-  FiUser,
-  FiCode,
-  FiBriefcase,
-  FiMail,
-  FiGithub,
-  FiLinkedin,
-} from "react-icons/fi";
-import profilePic from "@/assets/images/profilepic2.jpg";
-import { FaXTwitter } from "react-icons/fa6";
+import { FiMenu, FiX } from "react-icons/fi";
+import { navLinks, socialLinks, profileInfo } from "../constants";
 
 const NavigationMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navLinks = [
-    { name: "Home", icon: FiHome, href: "#home" },
-    { name: "About", icon: FiUser, href: "/about" },
-    { name: "Skills", icon: FiCode, href: "#skills" },
-    { name: "Projects", icon: FiBriefcase, href: "/projects" },
-    { name: "Contact", icon: FiMail, href: "#contact" },
-  ];
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
@@ -119,16 +99,16 @@ const NavigationMenu = () => {
               <div className="p-3 sm:p-4 border-b border-green-500/20">
                 <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-3">
                   <img
-                    src="/profilepic5.jpg"
+                    src={profileInfo.profileImage}
                     alt="Profile"
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-green-500/30"
                   />
                   <div>
                     <h3 className="text-white tracking font-medium text-base sm:text-lg ">
-                      Forsyth
+                      {profileInfo.name}
                     </h3>
                     <p className="text-slate-400 text-[10px] sm:text-xs">
-                      Web developer / Designer
+                      {profileInfo.title}
                     </p>
                   </div>
                 </div>
@@ -158,46 +138,21 @@ const NavigationMenu = () => {
 
               {/* Menu Footer */}
               <div className="p-3 sm:p-4 border-t border-green-500/20 bg-[#1f1d1d]">
-                {/* <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <FiCircle className="text-green-500 text-[6px] sm:text-[8px] fill-green-500 animate-pulse" />
-                    <span className="text-[10px] sm:text-xs text-slate-400">
-                      Available for work
-                    </span>
-                  </div>
-                </div> */}
-                {/* Social Icons */}
                 <div className="flex items-center gap-2.5 sm:gap-3 ">
-                  <a
-                    href="https://www.linkedin.com/in/forsyth-okoeguale"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-green-500 transition-colors"
-                  >
-                    <FiLinkedin className="text-base sm:text-lg" />
-                  </a>
-                  <a
-                    href="https://github.com/Forsyth01"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-green-500 transition-colors"
-                  >
-                    <FiGithub className="text-base sm:text-lg" />
-                  </a>
-                  <a
-                    href="https://x.com/Forsyth_X_"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-green-500 transition-colors"
-                  >
-                   <FaXTwitter className="text-base sm:text-lg" />
-                  </a>
-                  <a
-                    href="mailto:forsyth01.dev@email.com"
-                    className="text-slate-400 hover:text-green-500 transition-colors"
-                  >
-                    <FiMail className="text-base sm:text-lg" />
-                  </a>
+                  {socialLinks.map((social) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={social.id}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 hover:text-green-500 transition-colors"
+                      >
+                        <Icon className="text-base sm:text-lg" />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>

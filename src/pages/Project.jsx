@@ -135,7 +135,7 @@ const ProjectItem = ({ item, index }) => {
           transition={{ duration: 0.7, delay: index * 0.1 }}
           className="sticky top-40 flex justify-start"
         >
-          <span className="text-[140px] sm:text-[180px] lg:text-[220px] xl:text-[260px] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#fec212]/20 to-[#ff6b35]/15 leading-none select-none">
+          <span className="text-[140px] sm:text-[180px] lg:text-[220px] xl:text-[260px] font-black text-transparent bg-clip-text bg-gradient-to-br from-[#fec212]/20 to-green-500 leading-none select-none">
             {String(index + 1).padStart(2, "0")}
           </span>
         </motion.div>
@@ -145,10 +145,9 @@ const ProjectItem = ({ item, index }) => {
       <motion.div 
         whileHover={{ y: -6, scale: 1.02 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="relative bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] border border-gray-800/50 rounded-2xl overflow-hidden group hover:border-[#fec212]/30 transition-all duration-500 shadow-2xl"
+        className="relative bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] border border-gray-800/50 rounded-2xl overflow-hidden group  transition-all duration-500 shadow-2xl"
       >
-        {/* Glow Effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#fec212]/5 to-[#ff6b35]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
         
         <div className="relative lg:flex items-stretch min-h-[500px] lg:min-h-[400px]">
           {/* Left Content - Enhanced */}
@@ -184,7 +183,7 @@ const ProjectItem = ({ item, index }) => {
               transition={{ delay: index * 0.1 + 0.5, duration: 0.5 }}
               className="space-y-3"
             >
-              <h3 className="text-[#fec212] text-sm font-semibold uppercase tracking-wider">
+              <h3 className="text-green-500 text-sm font-semibold uppercase tracking-wider">
                 Technologies Used
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -195,7 +194,7 @@ const ProjectItem = ({ item, index }) => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 + 0.6 + idx * 0.05 }}
-                    className="px-3 py-2 text-xs font-medium bg-gray-800/60 text-slate-200 rounded-lg border border-gray-700/50 hover:bg-gray-700/60 hover:border-[#fec212]/30 transition-all duration-300 cursor-default"
+                    className="px-3 py-2 text-xs font-medium bg-gray-800/60 text-slate-200 rounded-lg border border-gray-700/50 transition-all duration-300 cursor-default"
                     whileHover={{ scale: 1.05, y: -2 }}
                   >
                     {skill}
@@ -216,7 +215,7 @@ const ProjectItem = ({ item, index }) => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#fec212] to-[#ffe1d6] text-[#1a1a1a] font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#fec212]/25"
+                className="group relative inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500 to-[#ffe1d6] text-[#1a1a1a] font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#fec212]/25"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -237,21 +236,36 @@ const ProjectItem = ({ item, index }) => {
             transition={{ delay: index * 0.1 + 0.4, duration: 0.7 }}
             className="w-full lg:w-1/2 relative overflow-hidden group/image"
           >
-            {/* Image Container with Gradient Overlay */}
+            {/* Image/Video Container with Gradient Overlay */}
             <div className="relative w-full h-full min-h-[300px] lg:min-h-[400px] overflow-hidden">
-              <motion.img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-full object-cover absolute inset-0 group-hover/image:scale-110 transition-transform duration-700 ease-out"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5 }}
-              />
-              
+              {item.video ? (
+                <motion.video
+                  src={item.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  onMouseEnter={(e) => e.target.pause()}
+                  onMouseLeave={(e) => e.target.play()}
+                  className="w-full h-full object-cover absolute inset-0 group-hover/image:scale-110 transition-transform duration-700 ease-out cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                />
+              ) : (
+                <motion.img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover absolute inset-0 group-hover/image:scale-110 transition-transform duration-700 ease-out"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                />
+              )}
+
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a]/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-[#1a1a1a]/60 lg:via-transparent" />
-              
+              <div className="absolute inset-0 bg-gradient-to-l from-[#1a1a1a]/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-[#1a1a1a]/60 lg:via-transparent pointer-events-none" />
+
               {/* Shine Effect on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover/image:translate-x-[100%] transition-transform duration-1000" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover/image:translate-x-[100%] transition-transform duration-1000 pointer-events-none" />
             </div>
             
             {/* Corner Accent */}
