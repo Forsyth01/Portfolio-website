@@ -205,7 +205,7 @@ const Hero = () => {
               user-friendly.
             </p>
             <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-              Passionate about clean code, smooth UI/UX, and leveraging{" "}
+            With 4+ years of experience, I'm Passionate about clean code, smooth UI/UX, and leveraging{" "}
               <span className="text-slate-300">AI & Web3 tools</span> to deliver
               modern solutions that drive impact.
             </p>
