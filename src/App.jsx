@@ -12,11 +12,13 @@ const App = () => {
   return (
     <div className="body1">
       <ScrollToTop />
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/projects" element={<Project />} />
-      </Routes>
+      <main id="main-content" role="main">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<Project />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );

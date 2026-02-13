@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import { FiArrowUpRight, FiArrowLeft, FiExternalLink } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 // Particle Background Component (same as your Hero)
 const ParticleBackground = () => {
@@ -314,8 +315,94 @@ const BackButton = () => {
 };
 
 const ProjectPage = () => {
+  const projectsStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://forsythokoeguale.bio/projects#webpage",
+        "url": "https://forsythokoeguale.bio/projects",
+        "name": "Web Development Projects | Forsyth Okoeguale Portfolio",
+        "isPartOf": { "@id": "https://forsythokoeguale.bio/#website" },
+        "about": { "@id": "https://forsythokoeguale.bio/#person" },
+        "description": "Explore Forsyth Okoeguale's web development portfolio featuring React, Next.js, and full-stack projects including e-commerce platforms, landing pages, and modern web applications.",
+        "breadcrumb": { "@id": "https://forsythokoeguale.bio/projects#breadcrumb" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://forsythokoeguale.bio/projects#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://forsythokoeguale.bio"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://forsythokoeguale.bio/projects"
+          }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://forsythokoeguale.bio/projects#collection",
+        "name": "Web Development Portfolio",
+        "description": "A collection of web development projects showcasing expertise in React, Next.js, TailwindCSS, Firebase, and modern web technologies.",
+        "author": { "@id": "https://forsythokoeguale.bio/#person" },
+        "about": {
+          "@type": "Thing",
+          "name": "Web Development Projects"
+        },
+        "hasPart": [
+          {
+            "@type": "CreativeWork",
+            "name": "Bukka Island",
+            "description": "Next.js food truck website with Firebase backend and admin dashboard",
+            "author": { "@id": "https://forsythokoeguale.bio/#person" },
+            "url": "https://bukka-island.vercel.app"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Nomad Pepe",
+            "description": "Next.js meme coin landing page with modern animations",
+            "author": { "@id": "https://forsythokoeguale.bio/#person" }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "HTX City Rentals",
+            "description": "React event rental catalog with responsive design",
+            "author": { "@id": "https://forsythokoeguale.bio/#person" }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Astellar Homes & Decor",
+            "description": "Next.js interior design blog with CMS integration",
+            "author": { "@id": "https://forsythokoeguale.bio/#person" }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Peace House University",
+            "description": "React university landing page",
+            "author": { "@id": "https://forsythokoeguale.bio/#person" }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden">
+      <SEO
+        title="Web Development Projects | Forsyth Okoeguale Portfolio | React & Next.js"
+        description="Explore Forsyth Okoeguale's portfolio of web development projects. See live examples of React, Next.js, e-commerce platforms, landing pages, and full-stack applications built for clients in USA, UK & globally."
+        keywords="Web Development Portfolio, React Projects, Next.js Projects, Forsyth Okoeguale Work, E-commerce Development, Landing Page Design, Full Stack Projects, TailwindCSS Projects, Firebase Projects, Modern Web Applications"
+        canonicalUrl="https://forsythokoeguale.bio/projects"
+        structuredData={projectsStructuredData}
+      />
       {/* Particle Background */}
       <ParticleBackground />
       

@@ -111,7 +111,7 @@ const ParticleBackground = () => {
 
 const Hero = () => {
   return (
-    <div id="home" className="relative min-h-screen sm:min-h-screen lg:min-h-[80vh] xl:min-h-[75vh]  overflow-hidden ">
+    <section id="home" aria-label="Hero Section - Introduction" className="relative min-h-screen sm:min-h-screen lg:min-h-[80vh] xl:min-h-[75vh]  overflow-hidden ">
       {/* Particle Background - spans entire page */}
       <ParticleBackground />
       
@@ -223,7 +223,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

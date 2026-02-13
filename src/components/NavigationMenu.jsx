@@ -100,8 +100,9 @@ const NavigationMenu = () => {
                 <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-3">
                   <img
                     src={profileInfo.profileImage}
-                    alt="Profile"
+                    alt="Forsyth Okoeguale - Full Stack Web Developer"
                     className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-green-500/30"
+                    loading="lazy"
                   />
                   <div>
                     <h3 className="text-white tracking font-medium text-base sm:text-lg ">

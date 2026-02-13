@@ -6,7 +6,7 @@ import { fadeUpVariants, scaleUpVariants, viewportOnce, staggerDelay } from "../
 const Skills = () => {
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20" aria-label="Technical Skills and Technologies">
       <div className="sm:w-[70%] xl:w-[60%] w-[90%] m-auto">
         <motion.div
           initial="hidden"

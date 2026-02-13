@@ -7,8 +7,9 @@ import Mailbtn from "./button/Mailbtn";
 
 const Contact = () => {
   return (
-    <div className="bg-[#1a1a1a] py-16 "
-    id="contact">
+    <section className="bg-[#1a1a1a] py-16 "
+    id="contact"
+    aria-label="Contact Section">
       <div className="md:w-[60%] w-[90%] m-auto">
         <div className="">
           <div className="flex flex-col justify-center py-4">
@@ -20,8 +21,9 @@ const Contact = () => {
                 <div className="">
                   <img
                     src="/profilepic3.jpg"
-                    alt="Profile"
+                    alt="Forsyth Okoeguale - Web Developer ready to collaborate on your next project"
                     className="h-[190px] w-[200px] object-cover rounded-full "
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -52,7 +54,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

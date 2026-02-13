@@ -11,6 +11,7 @@ import {
   FiGlobe,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 // Particle Background Component (same as your Hero)
 const ParticleBackground = () => {
@@ -443,8 +444,73 @@ const SkillsShowcase = () => {
 };
 
 const AboutPage = () => {
+  const aboutStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://forsythokoeguale.bio/about#webpage",
+        "url": "https://forsythokoeguale.bio/about",
+        "name": "About Forsyth Okoeguale | Full Stack Web Developer Biography",
+        "isPartOf": { "@id": "https://forsythokoeguale.bio/#website" },
+        "about": { "@id": "https://forsythokoeguale.bio/#person" },
+        "description": "Learn about Forsyth Okoeguale, a Full Stack Web Developer with 4+ years of experience. Discover his professional journey, technical skills, and expertise in React, Next.js, and modern web development.",
+        "breadcrumb": { "@id": "https://forsythokoeguale.bio/about#breadcrumb" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://forsythokoeguale.bio/about#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://forsythokoeguale.bio"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://forsythokoeguale.bio/about"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://forsythokoeguale.bio/#person",
+        "name": "Forsyth Okoeguale",
+        "givenName": "Forsyth",
+        "familyName": "Okoeguale",
+        "url": "https://forsythokoeguale.bio",
+        "image": "https://forsythokoeguale.bio/profilepic4.jpg",
+        "sameAs": [
+          "https://github.com/Forsyth01",
+          "https://www.linkedin.com/in/forsyth-okoeguale",
+          "https://x.com/Forsyth_X_"
+        ],
+        "jobTitle": "Full Stack Web Developer",
+        "description": "Full Stack Web Developer based in Lagos, Nigeria with 4+ years of experience delivering web solutions to clients locally and internationally. Specializing in React, Next.js, and TailwindCSS.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lagos",
+          "addressCountry": "Nigeria"
+        },
+        "email": "forsyth01.dev@gmail.com",
+        "knowsAbout": ["React", "Next.js", "JavaScript", "TypeScript", "TailwindCSS", "Node.js", "Firebase", "MongoDB", "Web Development"]
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden">
+      <SEO
+        title="About Forsyth Okoeguale | Full Stack Web Developer Experience & Skills"
+        description="Learn about Forsyth Okoeguale, a Full Stack Web Developer from Lagos, Nigeria with 4+ years of experience. Discover his journey, expertise in React, Next.js, TailwindCSS, and his work with international clients in USA & UK."
+        keywords="About Forsyth Okoeguale, Web Developer Biography, React Developer Experience, Full Stack Developer Skills, Lagos Web Developer, Freelance Developer Story, JavaScript Expert, Next.js Developer Profile"
+        canonicalUrl="https://forsythokoeguale.bio/about"
+        structuredData={aboutStructuredData}
+      />
       {/* Particle Background */}
       <ParticleBackground />
 
@@ -546,7 +612,7 @@ const AboutPage = () => {
                   At a Glance
                 </h3> */}
                 <div className="space-y-4 ">
-                  <img src="/profilepic4.jpg" alt="" className="lg:h-[450px] w-full object-contain" />
+                  <img src="/profilepic4.jpg" alt="Forsyth Okoeguale - Full Stack Web Developer based in Lagos, Nigeria" className="lg:h-[450px] w-full object-contain" loading="lazy" />
                 </div>
               </motion.div>
             </div>
