@@ -7,6 +7,7 @@ import {
   SiFirebase,
   SiGreensock,
   SiFigma,
+  SiShopify,
 } from "react-icons/si";
 
 // Centralized tech stack data - single source of truth
@@ -38,6 +39,13 @@ export const techStack = [
     name: "JavaScript",
     color: "#F7DF1E",
     darkColor: "#c9b116"
+  },
+   {
+    id: 12,
+    icon: SiShopify,
+    name: "Shopify",
+    color: "#7AB55C",
+    darkColor: "#5e8a47"
   },
   {
     id: 5,
@@ -88,4 +96,5 @@ export const techStack = [
     color: "#1572B6",
     darkColor: "#105a8b"
   },
+ 
 ];
