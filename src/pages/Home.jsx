@@ -147,9 +147,9 @@ const Home = () => {
   return (
     <div className="">
       <SEO
-        title="Forsyth Okoeguale | Full Stack Web Developer | React & Next.js Expert"
-        description="Hire Forsyth Okoeguale, a Full Stack Web Developer from Lagos, Nigeria with 4+ years experience. Specializing in React, Next.js, TailwindCSS, Node.js. Building high-performance web applications for clients in USA, UK & globally."
-        keywords="Forsyth Okoeguale, Full Stack Developer, React Developer, Next.js Developer, Web Developer Lagos, Freelance Web Developer, JavaScript Developer, TailwindCSS Expert, Node.js Developer, Hire Web Developer, Frontend Developer Nigeria, Portfolio Website Developer"
+        title="Forsyth Okoeguale — Full-Stack Developer · Next.js · Node.js · Supabase"
+        description="Full-stack developer based in Lagos. 4+ years shipping headless e-commerce, SaaS platforms, and production web apps in Next.js, Node.js, and Supabase. Available remote worldwide."
+        keywords="Full-stack developer, Next.js, Node.js, React, Supabase, Firebase, PostgreSQL, e-commerce, SaaS, web development"
         canonicalUrl="https://forsythokoeguale.bio"
         structuredData={homeStructuredData}
       />
