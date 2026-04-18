@@ -156,72 +156,107 @@ const Hero = () => {
       </div>
 
       {/* Navigation Menu Component */}
-      <NavigationMenu />
 
-      <div className="xl:w-[60%] sm:w-[70%] w-full max-w-screen-lg mx-auto px-6 flex flex-col h-[95vh] sm:py-10 lg:py-0 sm:h-full lg:h-[90vh] xl:h-[75vh] justify-center">
+      <div className="w-full max-w-7xl mx-auto px-6 py-16  lg:py-24 relative">
+        {/* Header */}
         <motion.div
-          className="space-y-8"
+          className="flex justify-between items-center mb-16 lg:mb-24 border-b pb-2 lg:pb-6 border-slate-700"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Heading with gradient */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center lg:text-left"
-          >
-            <p className="text-slate-400 text-sm uppercase tracking-wider mb-3 xl:pt-20">
-              Web Developer
+          <p className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">
+            Forsyth Okoeguale / Portfolio 2026
+          </p>
+          <div className="hidden lg:flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <p className="text-slate-400 text-xs sm:text-sm uppercase tracking-wider">
+              Open to opportunities
             </p>
-            <h1 className="text-[32px] sm:text-[52px] xl:text-[64px] font-normal mb-4 leading-[1.1] tracking-tight">
-              Hi, I'm{" "}
-              <span className="inline-block relative">
-                <span className="relative z-0 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">
-                  Forsyth
-                </span>
-                <motion.div
-                  className="absolute -bottom-2 left-0 w-full h-[3px] bg-gradient-to-r from-green-500 to-emerald-500"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                />
-              </span>
-            </h1>
-          </motion.div>
+          </div>
+      <NavigationMenu />
+        </motion.div>
 
-          {/* Description with better spacing */}
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+          {/* Left Column - Main Headline & Description */}
+          <div className="lg:col-span-2">
+            {/* Main Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-8 lg:mb-12"
+            >
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light leading-tight -space-y-3 sm:space-y-0">
+                <span className="block italic text-white">I ship</span>
+                <span className="block text-green-500 font-light">production</span>
+                <span className="block italic text-white">web apps.</span>
+              </h1>
+            </motion.div>
+
+            {/* Subheading */}
+            <motion.p
+              className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-lg mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Full-stack developer who takes your project from "we need this built" to live and making money. Next.js, Node.js, Supabase — 4+ years of shipping.
+            </motion.p>
+
+            {/* THE PITCH Section */}
+            <motion.div
+              className="border-t border-slate-700 pt-8 mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <p className="text-slate-500 text-xs uppercase tracking-widest mb-4">The Pitch</p>
+              <p className="text-base text-slate-300 leading-relaxed max-w-lg">
+                You don't need another developer who builds half an app and ghosts. I own the entire stack — database, APIs, frontend, deployment.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Right Column - Info Cards */}
           <motion.div
-            className="space-y-4 max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="space-y-6 flex flex-col justify-end"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-              I specialize in{" "}
-              <span className="text-white font-normal">React, Next.js</span>,
-              and modern web technologies. I build responsive, high-performance
-              websites and web apps that are intuitive, scalable, and
-              user-friendly.
-            </p>
-            <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-            With 4+ years of experience, I'm Passionate about clean code, smooth UI/UX, and leveraging{" "}
-              <span className="text-slate-300">AI & Web3 tools</span> to deliver
-              modern solutions that drive impact.
-            </p>
-          </motion.div>
+            {/* Info Card */}
+            <div className="flex items-center justify-between">
+              <p className="text-slate-500 text-xs uppercase tracking-widest">Based</p>
+              <p className="text-white font-light">Lagos, NG</p>
+            </div>
 
-          {/* Buttons with original components */}
-          <motion.div
-            className="flex gap-4 justify-center lg:justify-start pt-2 relative"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Resumebtn />
-            <Githubtn />
+            {/* Info Card */}
+            <div className="flex items-center justify-between">
+              <p className="text-slate-500 text-xs uppercase tracking-widest">Experience</p>
+              <p className="text-white font-light">4+ years</p>
+            </div>
+
+            {/* Info Card */}
+            <div className="flex items-center justify-between">
+              <p className="text-slate-500 text-xs uppercase tracking-widest">Stack</p>
+              <p className="text-white font-light">Next.js · Node.js · Supabase</p>
+            </div>
+
+            {/* Info Card */}
+            <div className="flex items-center justify-between">
+              <p className="text-slate-500 text-xs uppercase tracking-widest">Availability</p>
+              <p className="text-white font-light">Remote · Contract · FT</p>
+            </div>
+
+            {/* Info Card */}
+            <div className="flex items-center justify-between">
+              <p className="text-slate-500 text-xs uppercase tracking-widest">Rate</p>
+              <p className="text-white font-light">On request</p>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

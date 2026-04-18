@@ -29,25 +29,26 @@ const NavigationMenu = () => {
   };
 
   return (
-    <div className="fixed z-10 top-6 right-6 sm:top-6 sm:right-6 lg:top-[4%] xl:top-[14%] lg:right-[10%]">
+    <div className="relative z-50">
       {/* Menu Toggle Button */}
       <motion.button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="relative z-50 p-2.5 sm:p-3 bg-slate-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl hover:bg-slate-900/70 transition-colors"
-        whileHover={{ scale: 1.05 }}
+        className="relative p-2 sm:p-2.5  bg-slate-800/50 hover:bg-slate-800/30 transition-colors rounded-lg"
+        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
+        aria-label="Toggle navigation menu"
       >
         <motion.div
           animate={{ rotate: isMenuOpen ? 90 : 0 }}
           transition={{ duration: 0.3 }}
         >
           {isMenuOpen ? (
-            <FiX className="text-green-500 text-xl sm:text-2xl" />
+            <FiX className="text-green-500 text-lg sm:text-xl md:text-2xl" />
           ) : (
-            <FiMenu className="text-green-500 text-xl sm:text-2xl" />
+            <FiMenu className="text-green-500 text-lg sm:text-xl md:text-2xl" />
           )}
         </motion.div>
       </motion.button>
@@ -69,9 +70,9 @@ const NavigationMenu = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                scale: 0,
+                scale: 0.95,
                 x: 0,
-                y: -20,
+                y: -10,
               }}
               animate={{
                 opacity: 1,
@@ -81,16 +82,16 @@ const NavigationMenu = () => {
               }}
               exit={{
                 opacity: 0,
-                scale: 0,
+                scale: 0.95,
                 x: 0,
-                y: -20,
+                y: -10,
               }}
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 25,
               }}
-              className="absolute top-14 sm:top-16 right-0 w-[min(280px,calc(100vw-2rem))] bg-[#1a1a1a] backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-2xl z-50 overflow-hidden max-h-[calc(100vh-5rem)] overflow-y-auto"
+              className="fixed top-16 sm:top-20 right-4 sm:right-6 md:right-8 w-[calc(100vw-8rem)] sm:w-72 bg-[#1a1a1a] backdrop-blur-xl border border-green-500/30 rounded-2xl shadow-2xl z-50 overflow-hidden max-h-[calc(100vh-6rem)] overflow-y-auto"
               style={{
                 transformOrigin: "top right",
               }}

@@ -32,7 +32,7 @@ const ProjectHead = () => {
           className="bg-[#1d1d1d] py-1 px-3 rounded-md bg-opacity-90 w-fit mx-auto mb-4"
         >
           <p className="text-[12px] tracking-widest text-[#fec212] uppercase">
-            My Projects
+            Selected Work
           </p>
         </motion.div>
 
@@ -42,11 +42,11 @@ const ProjectHead = () => {
           variants={fadeUp}
           className="sm:text-[45px] text-[32px] my-4 font-bold leading-tight tracking-tight"
         >
-          Let’s{" "}
+          Real projects.{" "}
           <span className="bg-green-900 text-[#fec212] px-4 rounded-md">
-            Explore
+            Shipped.
           </span>{" "}
-          <span className="block">Have fun while at it</span>
+          <span className="block">Live and earning.</span>
         </motion.h1>
 
         {/* Supporting text */}
@@ -55,8 +55,7 @@ const ProjectHead = () => {
           variants={fadeUp}
           className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto"
         >
-          A collection of my recent works showcasing creativity, clean code, and
-          interactive user experiences. Scroll down and take a tour 🚀
+          Every project below is in production — built end-to-end, deployed, and doing its job. No tutorials, no clones.
         </motion.p>
 
         {/* Divider */}

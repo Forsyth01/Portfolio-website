@@ -32,14 +32,13 @@ const Contact = () => {
           </div>
           <div className="text-center space-y-4">
             <h2 className="xl:text-5xl tracking-tighter lg:tracking-tight text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
-              Let's Build <br className=""/> Something Amazing
+              Got a project?<br className=""/> Let’s make it real.
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
-              Got an exciting project? Looking for a dedicated developer? Let’s team up and make it happen.
+              I’m one message away from turning your idea into a live, working product. No fluff, no endless meetings — just results.
             </p>
             <p className="text-slate-400 text-base leading-relaxed max-w-xl mx-auto">
-              I'm always open to new opportunities, collaborations, and conversations. 
-              Let's connect and create something extraordinary together.
+              Whether it’s a new build from scratch, rescuing a stalled project, or scaling what you already have — I’m ready.
             </p>
           </div>
 
